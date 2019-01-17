@@ -1,0 +1,44 @@
+baseURL: "https://eduquidade.org"
+defaultContentLanguage: "pt"
+enableGitInfo: true
+enableMissingTranslationPlaceholders: true
+enableRobotsTXT: true
+disableHugoGeneratorInject: true
+disableKinds:
+  - "section"
+  - "taxonomy"
+  - "taxonomyTerm"
+  - "RSS"
+  - "sitemap"
+footnoteReturnLinkContents: "↩"
+googleAnalytics: ""
+languageCode: "pt-br"
+menu:
+  header:
+  - identifier: "home"
+    name: "Home"
+    url: "/"
+    weight: 1
+  - identifier: "FAQ"
+    name: "FAQ"
+    url: "/perguntas-frequentes/"
+    weight: 2
+metaDataFormat: "yaml"
+title: "Eduquidade"
+params:
+  mailchimpNewsletterFormAction: ""
+  siteDescription: ""
+  tagline: ""
+  twitterUsername: "appcivico"
+  shareImages:
+    default: "images/sharing/Compartilhamento_blockchain.jpg"
+    twitter: "images/sharing/Compartilhamento_twitter.jpg"
+    facebook: "images/sharing/Compartilhamento_blockchain.jpg"
+  socialNetworksLinks:
+    twitter: "https://twitter.com/appcivico"
+    # medium: "https://medium.com/app-civico"
+    facebook: "https://www.facebook.com/AppCivicoCSB"
+    # github: "https://github.com/AppCivico"
+    youtube: "https://www.youtube.com/channel/UCIuAzzWMogJV0r-mvFmjNNQ"
+taxonomies:
+  role: "role"
