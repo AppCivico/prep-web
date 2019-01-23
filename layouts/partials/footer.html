@@ -1,2 +1,13 @@
 <footer class="site-footer">
+  {{ with $.Site.Data.socialMedia }}
+  <ul class="social">
+      {{ range .list }}
+      <li>
+        <a href="{{ .url }}" title="{{ .name }}" rel="noopener" class="{{ .name }}">{{ .name }}</a>
+      </li>
+      {{ end }}
+  </ul>
+  {{ end }}
+  <a href="https://www5.usp.br/" rel="noopener" class="usp-logo">USP</a>
+  <a href="mailto:prep@email.com" class="contact">prep@email.com</a>
 </footer>

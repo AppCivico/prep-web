@@ -1,8 +1,7 @@
 <div class="header-bg">
   <header {{ if not .IsHome }} class="intern-header" {{ end }}>
     <nav class="main-nav">
-      <button class="js-menu-toggle">Menu</button>
-      <ul class="js-menu-list">
+      <ul class="menu">
         {{ with .Site.Menus.header }}
           {{ range . }}
           <li>
@@ -14,5 +13,6 @@
         {{ end }}
       </ul>
     </nav>
+    <a href="http://prerp1519brasil.com.br/" class="prep-logo"></a>
   </header>
 </div>
