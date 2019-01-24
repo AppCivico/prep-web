@@ -1,0 +1,38 @@
+.main-header {
+  display: flex;
+  padding-top: 1rem;
+}
+
+.menu {
+  display: flex;
+  padding-left: 0;
+  font-family: $barlow-font-stack;
+  list-style: none;
+}
+
+.menu li {
+  margin-left: 2em;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.menu a {
+  display: block;
+  font-size: ms(1);
+  color: palette('white');
+}
+
+.menu .active a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.prep-logo {
+  display: block;
+  width: 3.438em;
+  height: 2.75em;
+  margin-left: auto;
+  background-image: image('logo-prep.svg');
+}

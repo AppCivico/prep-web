@@ -123,6 +123,8 @@ body {
   > * {
     flex-shrink: 0; /* 1 */
   }
+
+  background-image: linear-gradient(to bottom, palette('cerise'), palette('blue'), palette('blue', 'dark'));
 }
 
 /**
@@ -437,8 +439,6 @@ a {
   }
 
   &:focus {
-    overflow: hidden;
-
     outline: 1px dotted;
     outline-offset: 2px;
   }

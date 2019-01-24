@@ -5,6 +5,6 @@ list:
   - name: "facebook"
     url: "https://www.facebook.com/AppCivicoCSB"
     svg: /uploads/facebook.svg
-  - name: "youtube"
-    url: "https://www.youtube.com/channel/UCIuAzzWMogJV0r-mvFmjNNQ"
+  - name: "instagram"
+    url: "https://instagram.com/lorem-ipsum"
     svg: /uploads/youtube.svg

@@ -1,0 +1,60 @@
+.site-footer {
+  padding-top: 1rem;
+}
+
+.social {
+  display: block;
+  padding-left: 0;
+  margin: 0 0 1.5em;
+}
+
+
+.social li {
+  display: inline-block;
+  margin-left: 0.7em;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.social a {
+  display: block;
+  width: 1.875em;
+  height: 1.875em;
+  text-indent: -999em;
+  background-size: contain;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.social .facebook {
+  background-image: image('facebook.svg');
+}
+
+.social .twitter {
+  background-image: image('twitter.svg');
+}
+
+.social .instagram {
+  background-image: image('instagram.svg');
+}
+
+.usp-logo {
+  display: block;
+  width: 10.938rem;
+  height: 1.375rem;
+  margin: 0 0 1.5em;
+  text-indent: -999em;
+  background-image: image('usp-logo.png');
+  background-size: cover;
+}
+
+.contact {
+  font-size: ms(-1);
+  color: palette('white');
+}

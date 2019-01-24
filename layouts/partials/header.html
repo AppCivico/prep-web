@@ -1,10 +1,10 @@
-<div class="header-bg">
-  <header {{ if not .IsHome }} class="intern-header" {{ end }}>
+<div class="container">
+  <header class="main-header {{ if not .IsHome }}  intern-header {{ end }}">
     <nav class="main-nav">
       <ul class="menu">
         {{ with .Site.Menus.header }}
           {{ range . }}
-          <li>
+          <li {{ if or ($.IsMenuCurrent "header" .) ($.HasMenuCurrent "header" .) }} class="active"{{ end }}>
             <a href="{{ .URL }}">
               {{ .Name }}
             </a>
