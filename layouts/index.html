@@ -12,20 +12,37 @@
 
       {{ partial "header.html" . }}
 
-      <div class="container">
+      <div class="container main-slider-container">
         <ul class="main-slider">
-          <li>
-            <h1>amanda selfie</h1>
-            <span class="hashtag"><span class="blue">#</span>tira<span class="blue">neura</span></span>
+          <li class="main-slider__slide main-slider__slide--hashtag">
+            <div class="main-slider__slide-content">
+              <h1>
+                amanda selfie
+              </h1>
+              <span class="hashtag"><span class="hashtag__destak-text">#</span>tira<span class="hashtag__destak-text">neura</span></span>
+            </div>
           </li>
-          <!-- <li> -->
-          <!--   amanda selfie -->
-          <!--   <span class="hashtag">#tiraneura</span> -->
-          <!-- </li> -->
-          <!-- <li> -->
-          <!--   amanda selfie -->
-          <!--   <span class="hashtag">#tiraneura</span> -->
-          <!-- </li> -->
+          <li class="main-slider__slide main-slider__slide--text-overflow">
+            <div class="main-slider__slide-content">
+              <h2>
+                se
+                <span class="white-text">combinar</span>
+                direitinho...
+              </h2>
+              <small>
+                todo mundo
+                se informa!
+              </small>
+            </div>
+          </li>
+          <li class="main-slider__slide main-slider__slide--hashtag-alternative">
+            <div class="main-slider__slide-content">
+              <h3>
+                vem de prep, bb!
+              </h3>
+              <span class="hashtag"><span class="hashtag__destak-text">#</span>arrasou</span>
+            </div>
+          </li>
         </ul>
       </div>
 
@@ -40,12 +57,14 @@
       <script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
 
 
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/tiny-slider.css">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/min/tiny-slider.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/tiny-slider.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/min/tiny-slider.js"></script>
       <script type="module">
         const slider = tns({
-          container: '.slider',
+          container: '.main-slider',
           controls: false,
+          // center: true,
+          // axis: 'vertical',
           navPosition: 'bottom',
           autoplayButtonOutput: false,
           // autoplay: true,

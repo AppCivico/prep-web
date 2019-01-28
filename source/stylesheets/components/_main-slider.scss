@@ -1,24 +1,129 @@
+.main-slider-container {
+}
+
 .main-slider {
-  display: flex;
   padding-left: 0;
-  text-align: center;
+}
+
+.main-slider__slide-content {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - 14rem);
+}
+
+.main-slider__slide--hashtag {
   color: palette('white');
 }
 
-.main-slider h1 {
+.main-slider__slide--hashtag h1 {
+  position: relative;
+  margin-bottom: 0;
   font-size: ms(9);
   font-family: $voltaire-font-stack;
   letter-spacing: 1px;
   text-transform: uppercase;
+
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    content: '';
+  }
+
+  &::before {
+    top: -7.5rem;
+    left: calc(50% - 3rem);
+    width: 7.375rem;
+    height: 4.5rem;
+    background: image('crush.jpg');
+  }
+
+  &::after {
+    bottom: -8.5rem;
+    left: 2rem;
+    width: 6.562rem;
+    height: 4.438rem;
+    background: image('little-problem.png');
+  }
+}
+
+.main-slider__slide--hashtag .hashtag {
+  font-weight: bold;
+  font-size: ms(4);
+  font-family: $barlow-font-stack;
+  text-transform: uppercase;
+}
+
+.hashtag__destak-text {
+  color: palette('blue', 'dark');
 }
 
 .main-slider li {
-  width: 100%;
   padding-left: 0;
   text-align: center;
   list-style: none;
 }
 
 .main-slider .hashtag {
-  float: right;
+  margin-left: auto;
+}
+
+.main-slider__slide--text-overflow {
+  color: palette('orange');
+}
+
+.main-slider__slide--text-overflow h2 {
+  position: relative;
+  margin-bottom: 0;
+  font-size: ms(9);
+  line-height: 0.65;
+  font-family: $barlow-font-stack;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: pre-line;
+
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    content: '';
+  }
+
+  &::before {
+    top: -7.5rem;
+    left: calc(50% - 3rem);
+    width: 10.375rem;
+    height: 7rem;
+    background: image('prep-right-close.png');
+  }
+
+  &::after {
+    bottom: -10rem;
+    left: 2rem;
+    width: 6.5rem;
+    height: 5rem;
+    background: image('respect-hottie.png');
+  }
+}
+
+.main-slider__slide--text-overflow .white-text {
+  color: palette('white');
+}
+
+.main-slider__slide--text-overflow small {
+  margin-left: auto;
+  font-weight: 400;
+  font-size: ms(4);
+  line-height: 1;
+  font-family: $voltaire-font-stack;
+  text-transform: uppercase;
+  white-space: pre-line;
+  color: palette('white');
+}
+
+.main-slider__slide--hashtag-alternative h2 {
+  font-size: ms(4);
+  font-family: $barlow-font-stack;
 }
