@@ -123,7 +123,59 @@
   color: palette('white');
 }
 
-.main-slider__slide--hashtag-alternative h2 {
-  font-size: ms(4);
+.main-slider__slide--hashtag-alternative {
   font-family: $barlow-font-stack;
+  text-transform: uppercase;
+}
+
+.main-slider__slide--hashtag-alternative h3 {
+  position: relative;
+  margin-bottom: 0;
+  font-size: ms(5);
+  color: palette('white');
+
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    content: '';
+  }
+
+  &::before {
+    top: -9rem;
+    left: 10%;
+    width: 6.4rem;
+    height: 6.8rem;
+    background: image('girls-with-girls.png');
+  }
+
+  &::after {
+    bottom: -12rem;
+    left: 0.6rem;
+    width: 9.2rem;
+    height: 4.9rem;
+    background: image('make-out.png');
+  }
+}
+
+.main-slider__slide--hashtag-alternative .hashtag {
+  position: relative;
+  font-weight: bold;
+  font-size: ms(4);
+  color: palette('orange');
+
+  &::after {
+    position: absolute;
+    bottom: -4rem;
+    left: 2rem;
+    display: block;
+    width: 5.2rem;
+    height: 2.7rem;
+    background: image('heart.png');
+    content: '';
+  }
+}
+
+.main-slider__slide--hashtag-alternative .hashtag__destak-text {
+  color: palette('white');
 }
