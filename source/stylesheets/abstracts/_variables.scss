@@ -141,6 +141,13 @@ $palette: (
     'opacity': rgba(0, 0, 0, 0.4),
   ),
   'cerise': rgb(193, 16, 115),
+  'gradient': (
+    'pink': rgb(225, 7, 118),
+    'blue-dark': rgb(0, 26, 99),
+    'blue-light': rgb(0, 190, 183),
+    'orange': rgb(255, 169, 79),
+    'purple': rgb(47, 7, 94),
+  ),
   'shadow': (
     'base': rgba(86, 121, 192, 0.3),
   ),
@@ -238,6 +245,7 @@ $breakpoints: _im-to-em(
     'tablet': 768px,
     'desktop': 1024px,
     'wide': 1280px,
+    'tall': 650px,
   )
 ) !default;
 

@@ -124,7 +124,27 @@ body {
     flex-shrink: 0; /* 1 */
   }
 
-  background-image: linear-gradient(to bottom, palette('cerise'), palette('blue'), palette('blue', 'dark'));
+  background-image: linear-gradient(to bottom,
+    palette('gradient', 'pink'),
+    palette('gradient', 'blue-dark'),
+    palette('gradient', 'blue-light'),
+    palette('gradient', 'blue-dark'),
+    palette('gradient', 'orange'),
+    palette('gradient', 'purple'));
+  background-size: 100% 400%;
+  transition: background-position 0.6s;
+}
+
+.body-style-1 {
+  background-position: 0 0;
+}
+
+.body-style-2 {
+  background-position: 0 50%;
+}
+
+.body-style-3 {
+  background-position: 0 100%;
 }
 
 /**

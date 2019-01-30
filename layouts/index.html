@@ -8,7 +8,7 @@
 
     {{ partial "head.html" . }}
 
-    <body>
+    <body class="body-style-1">
 
       {{ partial "header.html" . }}
 
@@ -16,7 +16,7 @@
         <ul class="main-slider">
           <li class="main-slider__slide main-slider__slide--hashtag">
             <div class="main-slider__slide-content">
-              <h1>
+              <h1 class="body-style-1">
                 amanda selfie
               </h1>
               <span class="hashtag"><span class="hashtag__destak-text">#</span>tira<span class="hashtag__destak-text">neura</span></span>
@@ -75,6 +75,12 @@
           //     },
           //   }
         });
+
+        slider.events.on('transitionStart', handleBannerChange);
+        function handleBannerChange(info, eventName) {
+          console.log(info.displayIndex);
+          document.querySelector('body').className = `body-style-${info.displayIndex}`;
+        }
       </script>
 
     </body>
