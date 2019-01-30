@@ -49,6 +49,7 @@
     height: 5.638rem;
     background-image: image('little-problem.svg');
     background-size: cover;
+    background-repeat: no-repeat;
     transform: rotate(-6deg);
 
 
@@ -107,6 +108,7 @@
     height: 4.07rem;
     background: image('prep-right-close.svg');
     background-size: contain;
+    background-repeat: no-repeat;
     transform: rotate(-13deg);
     backface-visibility: hidden;
   }
@@ -119,6 +121,7 @@
     height: 3.4rem;
     background: image('respect-hottie.svg');
     background-size: contain;
+    background-repeat: no-repeat;
     transform: rotate(-20deg);
 
     @media screen and (min-height: breakpoint('tall')) {
@@ -164,9 +167,10 @@
     top: -9rem;
     left: 10%;
     width: 4.7rem;
-    height: 6.8rem;
+    height: 6.6rem;
     background: image('girls-with-girls.svg');
     background-size: contain;
+    background-repeat: no-repeat;
   }
 
   &::after {
@@ -177,6 +181,7 @@
     height: 2.1rem;
     background: image('make-out.svg');
     background-size: contain;
+    background-repeat: no-repeat;
 
     @media screen and (min-height: breakpoint('tall')) {
       display: block;
@@ -199,6 +204,7 @@
     height: 2.7rem;
     background: image('heart.svg');
     background-size: contain;
+    background-repeat: no-repeat;
     content: '';
   }
 }
