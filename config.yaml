@@ -19,7 +19,7 @@ menu:
     name: "Home"
     url: "/"
     weight: 1
-  - identifier: "FAQ"
+  - identifier: "Dúvidas"
     name: "FAQ"
     url: "/perguntas-frequentes/"
     weight: 2
