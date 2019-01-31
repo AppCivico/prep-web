@@ -25,6 +25,18 @@
   letter-spacing: 1px;
   text-transform: uppercase;
 
+  @media screen and (min-width: breakpoint('phablet')) {
+    font-size: ms(12);
+  }
+
+  @media screen and (min-width: breakpoint('tablet')) {
+    font-size: ms(16);
+  }
+
+  @media screen and (min-width: breakpoint('wide')) {
+    font-size: ms(19);
+  }
+
   &::before,
   &::after {
     position: absolute;
@@ -33,12 +45,16 @@
   }
 
   &::before {
-    top: -7.5rem;
+    top: -5.5rem;
     left: calc(50% - 3rem);
     width: 5rem;
     height: 2.5rem;
     background: image('crush.svg');
     background-size: 100% 100%;
+
+    @media screen and (min-height: breakpoint('tall')) {
+      top: -7.5rem;
+    }
   }
 
   &::after {
@@ -52,9 +68,12 @@
     background-repeat: no-repeat;
     transform: rotate(-6deg);
 
-
     @media screen and (min-height: breakpoint('tall')) {
       display: block;
+    }
+
+    @media screen and (min-width: breakpoint('tablet')) {
+      bottom: -6.5rem;
     }
   }
 }
@@ -93,6 +112,14 @@
   text-align: left;
   text-transform: uppercase;
   white-space: pre-line;
+
+  @media screen and (min-width: breakpoint('phablet')) {
+    font-size: ms(12);
+  }
+
+  @media screen and (min-width: breakpoint('tablet')) {
+    font-size: ms(14);
+  }
 
   &::before,
   &::after {
@@ -156,6 +183,15 @@
   font-size: ms(5);
   color: palette('white');
 
+  @media screen and (min-width: breakpoint('phablet')) {
+    font-size: ms(9);
+    line-height: 1;
+  }
+
+  @media screen and (min-width: breakpoint('tablet')) {
+    font-size: ms(13);
+  }
+
   &::before,
   &::after {
     position: absolute;
@@ -186,6 +222,10 @@
     @media screen and (min-height: breakpoint('tall')) {
       display: block;
     }
+
+    @media screen and (min-width: breakpoint('phablet')) {
+      bottom: -4rem;
+    }
   }
 }
 
@@ -194,6 +234,10 @@
   font-weight: bold;
   font-size: ms(4);
   color: palette('orange');
+
+  @media screen and (min-width: breakpoint('tablet')) {
+    font-size: ms(6);
+  }
 
   &::after {
     position: absolute;

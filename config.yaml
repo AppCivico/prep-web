@@ -20,7 +20,7 @@ menu:
     url: "/"
     weight: 1
   - identifier: "Dúvidas"
-    name: "FAQ"
+    name: "Dúvidas"
     url: "/perguntas-frequentes/"
     weight: 2
 metaDataFormat: "yaml"
