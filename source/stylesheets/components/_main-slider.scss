@@ -11,6 +11,10 @@
   flex-direction: column;
   justify-content: center;
   height: calc(100vh - 14rem);
+
+  // @media screen and (min-width: breakpoint('desktop')) {
+  //   height: calc(100vh - 256px);
+  // }
 }
 
 .main-slider__slide--hashtag {
@@ -21,6 +25,7 @@
   position: relative;
   margin-bottom: 0;
   font-size: ms(9);
+  line-height: 1;
   font-family: $voltaire-font-stack;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -31,6 +36,10 @@
 
   @media screen and (min-width: breakpoint('tablet')) {
     font-size: ms(16);
+  }
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    margin-top: 0;
   }
 
   @media screen and (min-width: breakpoint('wide')) {
@@ -83,6 +92,10 @@
   font-size: ms(4);
   font-family: $barlow-font-stack;
   text-transform: uppercase;
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    font-size: ms(6);
+  }
 }
 
 .hashtag__destak-text {
@@ -119,6 +132,10 @@
 
   @media screen and (min-width: breakpoint('tablet')) {
     font-size: ms(14);
+  }
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    margin-top: 0;
   }
 
   &::before,
@@ -190,6 +207,10 @@
 
   @media screen and (min-width: breakpoint('tablet')) {
     font-size: ms(13);
+  }
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    margin-top: 0;
   }
 
   &::before,
@@ -264,6 +285,17 @@
   justify-content: center;
   width: 100%;
   margin-top: -2rem;
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    position: absolute;
+    top: 37px;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 0.8rem;
+    height: calc(100vh - 37px);
+  }
 }
 
 .main-slider-container .tns-nav button {
@@ -277,6 +309,11 @@
 
   &:first-child {
     margin-left: 0;
+  }
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    margin-left: 0;
+    margin-bottom: 5px;
   }
 }
 

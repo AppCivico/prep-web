@@ -1,6 +1,18 @@
 .site-footer {
   position: absolute;
   bottom: 1rem;
+  z-index: 2;
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    // @include container;
+    position: relative;
+  }
+}
+
+.site-footer .container {
+  @media screen and (min-width: breakpoint('desktop')) {
+    display: flex;
+  }
 }
 
 .social {
