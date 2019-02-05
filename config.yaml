@@ -21,7 +21,7 @@ menu:
     weight: 1
   - identifier: "Dúvidas"
     name: "Dúvidas"
-    url: "/perguntas-frequentes/"
+    url: "/duvidas/"
     weight: 2
 metaDataFormat: "yaml"
 title: "Eduquidade"
