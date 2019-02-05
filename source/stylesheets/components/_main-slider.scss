@@ -10,7 +10,8 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  height: calc(100vh - 14rem);
+  height: calc(100vh - 9rem);
+  margin-top: -5rem;
 
   // @media screen and (min-width: breakpoint('desktop')) {
   //   height: calc(100vh - 256px);
@@ -84,6 +85,10 @@
     @media screen and (min-width: breakpoint('tablet')) {
       bottom: -6.5rem;
     }
+
+    @media screen and (min-width: breakpoint('wide')) {
+      bottom: -14rem;
+    }
   }
 }
 
@@ -136,6 +141,10 @@
 
   @media screen and (min-width: breakpoint('desktop')) {
     margin-top: 0;
+  }
+
+  @media screen and (min-width: breakpoint('wide')) {
+    font-size: ms(16);
   }
 
   &::before,
@@ -211,6 +220,10 @@
 
   @media screen and (min-width: breakpoint('desktop')) {
     margin-top: 0;
+  }
+
+  @media screen and (min-width: breakpoint('wide')) {
+    font-size: ms(15);
   }
 
   &::before,
@@ -312,8 +325,8 @@
   }
 
   @media screen and (min-width: breakpoint('desktop')) {
+    margin-bottom: 1.5rem;
     margin-left: 0;
-    margin-bottom: 5px;
   }
 }
 

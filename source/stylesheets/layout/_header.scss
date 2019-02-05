@@ -5,6 +5,9 @@
   @media screen and (min-width: breakpoint('desktop')) {
     @include container;
     justify-content: flex-end;
+  }
+
+  @media screen and (min-width: breakpoint('wide')) {
     padding-top: 3.5rem;
   }
 }
@@ -28,23 +31,10 @@
   }
 }
 
-.menu a {
+.menu .active {
   position: relative;
-  display: block;
-  font-size: ms(1);
-  text-transform: uppercase;
-  color: palette('white');
 
-  @media screen and (min-width: breakpoint('desktop')) {
-    font-size: ms(3);
-  }
-}
-
-.menu .active a {
-  font-weight: bold;
-  text-decoration: underline;
-
-  &:before {
+  &::after {
     position: absolute;
     top: -0.8em;
     left: calc(50% - 0.2em);
@@ -60,6 +50,50 @@
     }
   }
 
+  @media screen and (min-width: breakpoint('desktop')) {
+    text-decoration: none;
+  }
+}
+
+.menu a {
+  position: relative;
+  display: block;
+  z-index: 0;
+  padding: 0 0.8em;
+  font-size: ms(1);
+  text-transform: uppercase;
+  color: palette('white');
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    position: relative;
+    overflow: hidden;
+    font-size: ms(3);
+
+    &::before {
+      position: absolute;
+      right: 100%;
+      bottom: 0;
+      left: -8px;
+      z-index: -1;
+      height: 0.6em;
+      background: palette('blue');
+      content: '';
+      transition: right 0.3s;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      &::before {
+        right: 0;
+      }
+    }
+  }
+}
+
+.menu .active a {
+  font-weight: bold;
+  text-decoration: underline;
 
   @media screen and (min-width: breakpoint('desktop')) {
     text-decoration: none;

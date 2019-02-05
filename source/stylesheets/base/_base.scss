@@ -142,31 +142,6 @@ body {
   }
 }
 
-.body-style-1 {
-  background-image: image('bg-home-1.jpg');
-  background-position: 0 0;
-
-  @media screen and (min-width: breakpoint('desktop')) {
-    background-position: 0 0;
-  }
-}
-
-.body-style-2 {
-  background-image: image('bg-home-2.png');
-  background-position: 0 50%;
-
-  @media screen and (min-width: breakpoint('desktop')) {
-    background-position: left bottom, 0 50%;
-  }
-}
-
-.body-style-3 {
-  background-image: image('bg-home-3.png');
-  @media screen and (min-width: breakpoint('desktop')) {
-    background-position: left bottom, 0 100%;
-  }
-}
-
 .bg-gradient {
   position: absolute;
   width: 100%;
@@ -191,7 +166,7 @@ body {
     palette('gradient', 'orange'),
     palette('gradient', 'purple')
   ),
-  image('bg-home-2.png');
+  image('bg-home-2.jpg');
   background-size: cover;
   content: '';
   opacity: 0;
@@ -204,7 +179,7 @@ body {
     palette('gradient', 'blue-light'),
     palette('gradient', 'blue-dark'),
   ),
-  image('bg-home-3.png');
+  image('bg-home-3.jpg');
 }
 
 .body-style-2 .bg-gradient::after {
