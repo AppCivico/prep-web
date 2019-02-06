@@ -1,1 +1,3 @@
-// import startChartFunctionalities from './chart';
+import backToTop from './back-to-top';
+
+backToTop();
