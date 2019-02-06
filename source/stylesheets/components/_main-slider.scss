@@ -164,6 +164,10 @@
     background-repeat: no-repeat;
     transform: rotate(-13deg);
     backface-visibility: hidden;
+
+    @media screen and (min-height: breakpoint('tall')) {
+      top: -3.5rem;
+    }
   }
 
   &::after {
