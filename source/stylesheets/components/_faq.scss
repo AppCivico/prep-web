@@ -1,0 +1,41 @@
+.faq {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  color: palette('white');
+}
+
+.faq h1,
+.faq h2 {
+  font-family: $barlow-font-stack;
+}
+
+.faq p {
+  max-width: 100%;
+}
+
+.faq__back-to-top {
+  position: relative;
+  align-self: flex-end;
+  padding-right: 1.3em;
+  font-weight: bold;
+  text-decoration: underline;
+  text-transform: uppercase;
+  color: inherit;
+  background-color: transparent;
+  border: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  &::after {
+    position: absolute;
+    top: 0.4em;
+    right: 0;
+    display: block;
+    width: 1em;
+    height: 1em;
+    background-image: image('arrow-up.svg');
+    background-size: contain;
+    content: '';
+  }
+}

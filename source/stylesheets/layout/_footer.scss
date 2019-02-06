@@ -1,4 +1,9 @@
 .site-footer {
+  display: block;
+  padding-bottom: 2rem;
+}
+
+.home-page .site-footer {
   position: absolute;
   bottom: 1rem;
   z-index: 2;

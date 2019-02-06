@@ -113,13 +113,21 @@ body {
 
   flex-direction: column;
 
-  height: 100vh; /* 2 */
+  // height: 100vh; /* 2 */
   min-height: 100%;
 
   margin: 0;
 
+  // overflow: auto;
+
   color: palette('black');
 
+  > * {
+    flex-shrink: 0; /* 1 */
+  }
+}
+
+.home-page body {
   &::before {
     position: absolute;
     display: none;
@@ -135,10 +143,6 @@ body {
     @media screen and (min-width: breakpoint('desktop')) {
       display: block;
     }
-  }
-
-  > * {
-    flex-shrink: 0; /* 1 */
   }
 }
 
@@ -188,6 +192,16 @@ body {
 
 .body-style-3 .bg-gradient::before {
   opacity: 1;
+}
+
+.body-style-4 {
+  background-image: linear-gradient(to bottom,
+    palette('gradient', 'blue-light'),
+    palette('gradient', 'blue-dark'),
+  ),
+  image('bg-home-4.jpg');
+  background-size: cover;
+  background-blend-mode: multiply;
 }
 
 
