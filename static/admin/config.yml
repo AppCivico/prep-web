@@ -1,8 +1,9 @@
 backend:
-  name: bitbucket
-  # name: git-gateway
-  repo: eokoe__frontend/prep # Path to your Bitbucket repository
-  branch: addCMS # Branch to update (optional; defaults to master)
+  name: git-gateway
+  repo: AppCivico/prep-web # Path to your Github repository
+  branch: dev # Branch to update (optional; defaults to master)
+# This line should *not* be indented
+publish_mode: editorial_workflow
 # This line should *not* be indented
 media_folder: "static/uploads" # Media files will be stored in the repo under images/uploads
 public_folder: "/uploads" # The src attribute for uploaded media will begin with /images/uploads
