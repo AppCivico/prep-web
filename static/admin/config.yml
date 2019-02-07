@@ -22,3 +22,4 @@ collections:
       - {label: "type", name: "type", widget: "hidden", default: "duvidas"}
       - {label: "weight", name: "weight", widget: "hidden", default: "4"}
       - {label: "Resposta", name: "body", widget: "markdown"}
+
