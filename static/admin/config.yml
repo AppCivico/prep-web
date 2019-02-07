@@ -12,6 +12,7 @@ collections:
     label: "Dúvidas" # Used in the UI
     folder: "content/duvidas" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
+    delete: true # Allow users to delete documents in this collection
     slug: "{{ slug }}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {label: "Pergunta", name: "title", widget: "string"}
