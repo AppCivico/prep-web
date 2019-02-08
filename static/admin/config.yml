@@ -23,3 +23,32 @@ collections:
       - {label: "weight", name: "weight", widget: "hidden", default: "4"}
       - {label: "Resposta", name: "body", widget: "markdown"}
 
+# Social
+  -
+    label: "Redes sociais"
+    name: "media"
+    files:
+      -
+        label: "Redes sociais"
+        name: "media"
+        file: "data/socialMedia.yml"
+        fields:
+          -
+            label: "Links"
+            name: "list"
+            allow_add: false
+            widget: "list"
+            required: true
+            fields:
+              -
+                label: "Nome"
+                name: "name"
+                widget: "string"
+              -
+                label: "Link"
+                name: "url"
+                widget: "string"
+              -
+                label: "Slug"
+                name: "svg"
+                widget: "hidden"

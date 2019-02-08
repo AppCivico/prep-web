@@ -1,10 +1,13 @@
 list:
   - name: "twitter"
+    cssClass: "twitter"
     url: "https://twitter.com/appcivico"
     svg: /uploads/twitter.svg
   - name: "facebook"
+    cssClass: "facebook"
     url: "https://www.facebook.com/AppCivicoCSB"
     svg: /uploads/facebook.svg
   - name: "instagram"
+    cssClass: "instagram"
     url: "https://instagram.com/lorem-ipsum"
     svg: /uploads/youtube.svg
