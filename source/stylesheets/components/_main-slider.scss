@@ -155,7 +155,7 @@
   }
 
   &::before {
-    top: -5.6rem;
+    top: -1.6rem;
     left: calc(50% - 3rem);
     width: 3.3rem;
     height: 4.07rem;
@@ -238,13 +238,17 @@
   }
 
   &::before {
-    top: -9rem;
+    top: -7rem;
     left: 10%;
     width: 4.7rem;
     height: 6.6rem;
     background: image('girls-with-girls.svg');
     background-size: contain;
     background-repeat: no-repeat;
+
+    @media screen and (min-height: breakpoint('tall')) {
+      top: -10rem;
+    }
   }
 
   &::after {
