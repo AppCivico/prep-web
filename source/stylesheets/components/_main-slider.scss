@@ -155,7 +155,10 @@
   }
 
   &::before {
-    top: 1rem;
+    // top: -3.5rem;
+    // top: -5rem;
+
+    top: -3rem;
     left: calc(50% - 3rem);
     width: 3.3rem;
     height: 4.07rem;
@@ -165,8 +168,12 @@
     transform: rotate(-13deg);
     backface-visibility: hidden;
 
-    @media screen and (min-height: breakpoint('tall')) {
-      top: -3.5rem;
+    @media screen and (min-width: breakpoint('desktop')) {
+      top: 1rem;
+    }
+
+    @media screen and (min-width: breakpoint('desktop')) and (min-height: breakpoint('tall')) {
+      top: -3.1rem;
     }
   }
 
