@@ -1,4 +1,4 @@
-baseURL: "https://eduquidade.org"
+baseURL: "https://quizzical-einstein-372c12.netlify.com"
 defaultContentLanguage: "pt"
 enableGitInfo: true
 enableMissingTranslationPlaceholders: true
@@ -31,9 +31,9 @@ params:
   tagline: ""
   twitterUsername: "prep1519"
   shareImages:
-    default: "images/sharing/default.jpg"
-    twitter: "images/sharing/twitter.jpg"
-    facebook: "images/sharing/facebook.jpg"
+    default: "assets/images/sharing/default.jpg"
+    twitter: "assets/images/sharing/twitter.jpg"
+    facebook: "assets/images/sharing/facebook.jpg"
   socialNetworksLinks:
     twitter: "https://twitter.com/appcivico"
     # medium: "https://medium.com/app-civico"
