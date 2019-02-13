@@ -1,7 +1,7 @@
 {
-  "name": "Eduquidade",
+  "name": "PrEP",
   "version": "1.0.0",
-  "description": "Eduquidade Landing Page",
+  "description": "PrEP Landing Page",
   "main": "index.html",
   "scripts": {
     "audit-deps": "rimraf -f package-lock.json && synp --source-file yarn.lock && npm audit & rimraf -f package-lock.json",

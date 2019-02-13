@@ -24,7 +24,7 @@ menu:
     url: "/duvidas/"
     weight: 2
 metaDataFormat: "yaml"
-title: "Eduquidade"
+title: "PrEP"
 params:
   mailchimpNewsletterFormAction: ""
   siteDescription: ""
