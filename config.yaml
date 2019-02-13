@@ -31,9 +31,9 @@ params:
   tagline: ""
   twitterUsername: "prep1519"
   shareImages:
-    default: "assets/images/sharing/default.jpg"
-    twitter: "assets/images/sharing/twitter.jpg"
-    facebook: "assets/images/sharing/facebook.jpg"
+    default: "assets/images/default.jpg"
+    twitter: "assets/images/twitter.jpg"
+    facebook: "assets/images/facebook.jpg"
   socialNetworksLinks:
     twitter: "https://twitter.com/appcivico"
     # medium: "https://medium.com/app-civico"
