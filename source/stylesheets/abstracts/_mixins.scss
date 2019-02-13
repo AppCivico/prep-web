@@ -866,3 +866,42 @@ $no-viewport: false !default;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
+
+/// Handle homepage slider backgrounds easily
+@mixin handle-background($bg-number, $bg-primary-color, $bg-secondary-color) {
+  background-image: linear-gradient(to bottom,
+    $bg-primary-color, $bg-secondary-color
+  ),
+  image('bg-home-#{$bg-number}-320.jpg');
+  background-size: cover;
+  background-blend-mode: multiply;
+
+  @media screen and (min-width: breakpoint('phablet')) {
+    background-image: linear-gradient(to bottom,
+      $bg-primary-color, $bg-secondary-color
+    ),
+    image('bg-home-#{$bg-number}-480.jpg');
+  }
+
+  @media screen and (min-width: breakpoint('tablet')) {
+    background-image: linear-gradient(to bottom,
+      $bg-primary-color, $bg-secondary-color
+    ),
+    image('bg-home-#{$bg-number}-768.jpg');
+  }
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    background-image: linear-gradient(to bottom,
+      $bg-primary-color, $bg-secondary-color
+    ),
+    image('bg-home-#{$bg-number}-1024.jpg');
+  }
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    background-image: linear-gradient(to bottom,
+      $bg-primary-color, $bg-secondary-color
+    ),
+    image('bg-home-#{$bg-number}-1366.jpg');
+  }
+}
+
