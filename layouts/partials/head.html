@@ -32,6 +32,64 @@
     document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, '');
   </script>
 
+  <!-- FAVICON -->
+	<link type="image/png" href="/favicon-16px.png" rel="icon" sizes="16x16">
+	<link type="image/png" href="/favicon-32px.png" rel="icon" sizes="32x32">
+	<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+	<link href="/site.webmanifest" rel="manifest">
+	<link href="/safari-pinned-tab.svg" rel="mask-icon" color="#333564">
+	<meta name="apple-mobile-web-app-title" content="PrEP">
+	<meta name="application-name" content="PrEP">
+	<meta name="msapplication-TileColor" content="#333564">
+	<meta name="theme-color" content="#333564">
+	<!-- END FAVICON -->
+
+	{{ with $.Site.Params.shareImages.default }}
+	<meta name="image" content="{{ . | absURL }}">
+	{{ end }}
+
+	<!-- Schema.org for Google -->
+	<meta itemprop="name" content="{{ .Site.Title }}">
+
+	{{ with $.Site.Params.siteDescription }}
+	<meta itemprop="description" content="{{ . }}">
+	{{ end }}
+
+	{{ with $.Site.Params.shareImages.default }}
+	<meta itemprop="image" content="{{ . | absURL }}">
+	{{ end }}
+
+	<!-- Twitter and Open Graph general -->
+	<meta name="twitter:title" property="og:title" content="{{ .Site.Title }}">
+
+	{{ with $.Site.Params.siteDescription }}
+	<meta name="twitter:description" property="og:description" content="{{ . | slicestr 0 200 }}">
+	<!-- max of 200 characters for Twitter & Facebook -->
+	{{ end }}
+
+	<meta name="twitter:url" property="og:url" content="{{ .Permalink }}">
+
+	<!-- Twitter -->
+	{{ with $.Site.Params.twitterUsername }}
+	<meta name="twitter:site" content="@{{ . }}">
+	<meta name="twitter:creator" content="@{{ . }}">
+	{{ end }}
+	{{ with $.Site.Params.shareImages.twitter }}
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image:src" content="{{ . | absURL }}">
+	{{ end }}
+	<!-- Maximum dimension: 1024px x 512px; minimum dimension: 440px x 220px -->
+
+	<!-- Facebook -->
+
+	<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+	{{ with $.Site.Params.shareImages.facebook }}
+	<meta property="og:image" content="{{ . | absURL }}"><!-- Recommended dimension: 1200px x 630px; minimum dimension: 600px x 315px -->
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+	{{ end }}
+
   <title>{{ if not .IsHome }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}</title>
 
   <!-- Polyfills must load sync, since they need to be active before other script runs -->

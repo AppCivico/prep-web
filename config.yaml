@@ -29,11 +29,11 @@ params:
   mailchimpNewsletterFormAction: ""
   siteDescription: ""
   tagline: ""
-  twitterUsername: "appcivico"
+  twitterUsername: "prep1519"
   shareImages:
-    default: "images/sharing/Compartilhamento_blockchain.jpg"
-    twitter: "images/sharing/Compartilhamento_twitter.jpg"
-    facebook: "images/sharing/Compartilhamento_blockchain.jpg"
+    default: "images/sharing/default.jpg"
+    twitter: "images/sharing/twitter.jpg"
+    facebook: "images/sharing/facebook.jpg"
   socialNetworksLinks:
     twitter: "https://twitter.com/appcivico"
     # medium: "https://medium.com/app-civico"
