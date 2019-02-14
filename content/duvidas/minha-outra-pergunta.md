@@ -3,6 +3,7 @@ title: "Minha outra pergunta lorem ipsum"
 date: 2017-09-14T15:44:44-03:00
 layout: none
 type: duvidas
+headless: true
 weight: 4
 ---
 
