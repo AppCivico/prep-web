@@ -11,31 +11,33 @@
     <body class="body-style-4">
       {{ partial "header.html" . }}
 
-      {{ with .Site.GetPage "/duvidas" }}
-      <div class="container">
-        <article class="faq" id="{{ .Params.id }}">
+      {{ with (where $.Site.Pages "Type" "duvidas") }}
+        {{ range (where $.Site.Pages "Type" "duvidas") }}
+          <div class="container">
+            <article class="faq" id="{{ .Params.id }}">
 
-            {{ with .Title }}
-              <h1>{{ . }}</h1>
-            {{ end }}
-
-            {{ .Content }}
-
-            {{ with .Resources }}
-              <section class="faq__questions">
-                {{ range . }}
-                <div class="faq-item">
-                  <h2 class="faq-item__question">{{ .Title }}</h2>
-                  <div class="faq-item__answer">
-                    {{ .Content }}
-                  </div>
-                </div>
+                {{ with .Title }}
+                  <h1>{{ . }}</h1>
                 {{ end }}
-              </section>
-            {{ end }}
-            <button class="js-back-to-top faq__back-to-top">Voltar ao topo</button>
-        </article>
-      </div>
+
+                {{ .Content }}
+
+                {{ with .Resources }}
+                  <section class="faq__questions">
+                    {{ range . }}
+                    <div class="faq-item">
+                      <h2 class="faq-item__question">{{ .Title }}</h2>
+                      <div class="faq-item__answer">
+                        {{ .Content }}
+                      </div>
+                    </div>
+                    {{ end }}
+                  </section>
+                {{ end }}
+                <button class="js-back-to-top faq__back-to-top">Voltar ao topo</button>
+            </article>
+          </div>
+        {{ end }}
       {{ end }}
 
       {{ partial "footer.html" . }}
