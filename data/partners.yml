@@ -1,0 +1,10 @@
+list:
+  - name: "Medicina UPS"
+    cssClass: "usp"
+    url: "https://twitter.com/appcivico"
+  - name: "ufmg"
+    cssClass: "ufmg"
+    url: "https://www.facebook.com/AppCivicoCSB"
+  - name: "uneb"
+    cssClass: "uneb"
+    url: "https://instagram.com/lorem-ipsum"
