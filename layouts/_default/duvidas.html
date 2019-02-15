@@ -11,9 +11,9 @@
     <body class="body-style-4">
       {{ partial "header.html" . }}
 
-      {{ with (where $.Site.Pages "Type" "duvidas") }}
-        {{ range (where $.Site.Pages "Type" "duvidas") }}
-          <div class="container">
+      <div class="container container--flex">
+        {{ with (where $.Site.Pages "Type" "duvidas") }}
+          {{ range (where $.Site.Pages "Type" "duvidas") }}
             <article class="faq" id="{{ .Params.id }}">
 
                 {{ with .Title }}
@@ -34,11 +34,11 @@
                     {{ end }}
                   </section>
                 {{ end }}
-                <button class="js-back-to-top faq__back-to-top">Voltar ao topo</button>
             </article>
-          </div>
+          {{ end }}
         {{ end }}
-      {{ end }}
+        <button class="js-back-to-top back-to-top">Voltar ao topo</button>
+      </div>
 
       {{ partial "footer.html" . }}
 
