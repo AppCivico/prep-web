@@ -11,43 +11,50 @@
   flex-direction: column;
   justify-content: center;
   height: calc(100vh - 9rem);
-  min-height: 26.25rem;
+  min-height: 30rem;
   margin-top: -5rem;
-
-  // @media screen and (min-width: breakpoint('desktop')) {
-  //   height: calc(100vh - 256px);
-  // }
 }
 
-.main-slider__slide--hashtag {
-  color: palette('white');
+.main-slider__slide {
+  padding-left: 0;
+  text-align: center;
+  list-style: none;
 }
 
-.main-slider__slide--hashtag h1 {
+
+.main-slider__slide .block {
+  display: block;
+}
+
+.main-slider__slide h1,
+.main-slider__slide h2,
+.main-slider__slide h3 {
   position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  margin-top: 0;
   margin-bottom: 0;
   font-size: ms(9);
-  line-height: 1;
-  font-family: $voltaire-font-stack;
-  letter-spacing: 1px;
+  line-height: 0.6;
+  font-family: $barlow-font-stack;
+  text-align: left;
   text-transform: uppercase;
+  color: palette('white');
 
   @media screen and (min-width: breakpoint('phablet')) {
     font-size: ms(12);
   }
 
   @media screen and (min-width: breakpoint('tablet')) {
-    font-size: ms(16);
-  }
-
-  @media screen and (min-width: breakpoint('desktop')) {
-    margin-top: 0;
+    font-size: ms(14);
   }
 
   @media screen and (min-width: breakpoint('wide')) {
-    font-size: ms(19);
+    font-size: ms(16);
   }
+}
 
+.main-slider__slide h1 {
   &::before,
   &::after {
     position: absolute;
@@ -56,7 +63,7 @@
   }
 
   &::before {
-    top: -4.5rem;
+    top: -3.5rem;
     left: calc(50% - 3rem);
     width: 5rem;
     height: 2.5rem;
@@ -84,70 +91,28 @@
     }
 
     @media screen and (min-width: breakpoint('tablet')) {
-      bottom: -6.5rem;
-    }
-
-    @media screen and (min-width: breakpoint('wide')) {
       bottom: -14rem;
     }
   }
 }
 
-.main-slider__slide--hashtag .hashtag {
-  font-weight: bold;
-  font-size: ms(4);
-  font-family: $barlow-font-stack;
-  text-transform: uppercase;
-
-  @media screen and (min-width: breakpoint('desktop')) {
-    font-size: ms(6);
-  }
+.main-slider__slide h1 .destak {
+  color: palette('blue', 'light');
 }
 
-.hashtag__destak-text {
-  color: palette('blue', 'dark');
+.main-slider__slide h2,
+.main-slider__slide h3 {
+  display: block;
+  line-height: 0.85;
 }
 
-.main-slider li {
-  padding-left: 0;
-  text-align: center;
-  list-style: none;
-}
-
-.main-slider .hashtag {
-  margin-left: auto;
-}
-
-.main-slider__slide--text-overflow {
+.main-slider__slide h2 .destak,
+.main-slider__slide h3 .destak {
   color: palette('orange');
 }
 
-.main-slider__slide--text-overflow h2 {
-  position: relative;
-  margin-bottom: 0;
-  font-size: ms(9);
-  line-height: 0.65;
-  font-family: $barlow-font-stack;
-  text-align: left;
-  text-transform: uppercase;
-  white-space: pre-line;
 
-  @media screen and (min-width: breakpoint('phablet')) {
-    font-size: ms(12);
-  }
-
-  @media screen and (min-width: breakpoint('tablet')) {
-    font-size: ms(14);
-  }
-
-  @media screen and (min-width: breakpoint('desktop')) {
-    margin-top: 0;
-  }
-
-  @media screen and (min-width: breakpoint('wide')) {
-    font-size: ms(16);
-  }
-
+.main-slider__slide h2 {
   &::before,
   &::after {
     position: absolute;
@@ -156,8 +121,8 @@
   }
 
   &::before {
-    top: -3rem;
-    left: calc(50% - 3rem);
+    top: -5rem;
+    right: 0;
     width: 3.3rem;
     height: 4.07rem;
     background: image('prep-right-close.svg');
@@ -192,49 +157,7 @@
   }
 }
 
-.main-slider__slide--text-overflow .white-text {
-  color: palette('white');
-}
-
-.main-slider__slide--text-overflow small {
-  margin-left: auto;
-  font-weight: 400;
-  font-size: ms(4);
-  line-height: 1;
-  font-family: $voltaire-font-stack;
-  text-transform: uppercase;
-  white-space: pre-line;
-  color: palette('white');
-}
-
-.main-slider__slide--hashtag-alternative {
-  font-family: $barlow-font-stack;
-  text-transform: uppercase;
-}
-
-.main-slider__slide--hashtag-alternative h3 {
-  position: relative;
-  margin-bottom: 0;
-  font-size: ms(5);
-  color: palette('white');
-
-  @media screen and (min-width: breakpoint('phablet')) {
-    font-size: ms(9);
-    line-height: 1;
-  }
-
-  @media screen and (min-width: breakpoint('tablet')) {
-    font-size: ms(13);
-  }
-
-  @media screen and (min-width: breakpoint('desktop')) {
-    margin-top: 0;
-  }
-
-  @media screen and (min-width: breakpoint('wide')) {
-    font-size: ms(15);
-  }
-
+.main-slider__slide h3 {
   &::before,
   &::after {
     position: absolute;
@@ -245,49 +168,61 @@
   &::before {
     top: -5.8rem;
     left: 10%;
-    width: 3.7rem;
-    height: 4.5rem;
-    background: image('girls-with-girls.svg');
+    width: 5rem;
+    height: 3.5rem;
+    background: image('vision.svg');
     background-size: contain;
     background-repeat: no-repeat;
+    transform: rotate(-10deg);
 
     @media screen and (min-height: breakpoint('tall')) {
-      top: -10rem;
-      width: 4.7rem;
-      height: 6.5rem;
+      top: -7.5rem;
+      width: 7rem;
+      height: 5rem;
     }
   }
 
   &::after {
     bottom: -12rem;
-    left: 0.6rem;
+    left: -1rem;
     display: none;
-    width: 6.5rem;
-    height: 2.1rem;
-    background: image('make-out.svg');
+    width: 10rem;
+    height: 1.8rem;
+    background: image('lets.svg');
     background-size: contain;
     background-repeat: no-repeat;
+    transform: rotate(-25deg);
 
     @media screen and (min-height: breakpoint('tall')) {
       display: block;
     }
 
     @media screen and (min-width: breakpoint('phablet')) {
-      bottom: -4rem;
+      bottom: -12rem;
     }
   }
 }
 
-.main-slider__slide--hashtag-alternative .hashtag {
-  position: relative;
+.hashtag {
+  margin-left: auto;
   font-weight: bold;
-  font-size: ms(4);
-  color: palette('orange');
+  font-size: ms(0);
+  line-height: 3;
+  font-family: $barlow-font-stack;
+  text-transform: uppercase;
+  color: palette('white');
 
-  @media screen and (min-width: breakpoint('tablet')) {
+  @media screen and (min-width: breakpoint('desktop')) {
     font-size: ms(6);
   }
+}
 
+.hashtag__destak-text {
+  color: palette('orange');
+}
+
+
+.main-slider__slide h3 .hashtag {
   &::after {
     position: absolute;
     bottom: -4rem;
@@ -302,10 +237,8 @@
   }
 }
 
-.main-slider__slide--hashtag-alternative .hashtag__destak-text {
-  color: palette('white');
-}
 
+// Slider nav
 .main-slider-container .tns-nav {
   position: relative;
   display: flex;
