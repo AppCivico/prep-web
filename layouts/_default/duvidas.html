@@ -12,6 +12,11 @@
       {{ partial "header.html" . }}
 
       <div class="container container--flex">
+        <article class="faq">
+          <h1>{{ .Title }}</h1>
+          {{ .Content }}
+        </article>
+
         {{ with (where $.Site.Pages "Type" "duvidas") }}
           {{ range (where $.Site.Pages "Type" "duvidas") }}
             <article class="faq" id="{{ .Params.id }}">
