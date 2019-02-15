@@ -26,11 +26,11 @@ collections:
 # Social
   -
     label: "Redes sociais"
-    name: "media"
+    name: "redes-sociais"
     files:
       -
         label: "Redes sociais"
-        name: "media"
+        name: "items"
         file: "data/socialMedia.yml"
         fields:
           -
@@ -52,3 +52,34 @@ collections:
                 label: "Slug"
                 name: "svg"
                 widget: "hidden"
+
+# Partners
+  -
+    label: "Parceiros"
+    name: "parceiros"
+    files:
+      -
+        label: "Parceiros"
+        name: "partners"
+        file: "data/partners.yml"
+        fields:
+          -
+            label: "Parceiros"
+            name: "list"
+            allow_add: false
+            widget: "list"
+            required: true
+            fields:
+              -
+                label: "Nome"
+                name: "name"
+                widget: "string"
+              -
+                label: "Css Class"
+                name: "cssClass"
+                widget: "hidden"
+              -
+                label: "Link"
+                name: "url"
+                widget: "string"
+

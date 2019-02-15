@@ -109,6 +109,8 @@ html {
  * https: //github.com/philipwalton/flexbugs#flexbug-3
  */
 body {
+  position: relative;
+
   display: flex; /* 1 */
 
   flex-direction: column;
@@ -141,7 +143,7 @@ body {
     content: '';
 
     @media screen and (min-width: breakpoint('desktop')) {
-      display: block;
+      // display: block;
     }
   }
 }
