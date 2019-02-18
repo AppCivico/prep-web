@@ -136,14 +136,15 @@ body {
     z-index: 1;
     width: 20%;
     height: 100%;
-    background-image: image('amanda.svg');
-    background-position: left bottom;
+    // background-image: image('amanda.svg');
+    background-image: image('amanda.png');
+    background-position: 0 calc(100% - 140px);
     background-size: contain;
     background-repeat: no-repeat;
     content: '';
 
     @media screen and (min-width: breakpoint('desktop')) {
-      // display: block;
+      display: block;
     }
   }
 }
