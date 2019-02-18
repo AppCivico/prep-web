@@ -18,9 +18,9 @@
           <li class="main-slider__slide">
             <div class="main-slider__slide-content">
               <h1>
-                <span class="destak">se</span>
-                combinar
-                <span class="destak">direitinho...</span>
+                <span class="destak block">se</span>
+                <span class="block">combinar</span>
+                <span class="destak block">direitinho...</span>
               </h1>
               <span class="hashtag">
                 <span class="hashtag__destak-text">#</span>PREP
@@ -60,40 +60,5 @@
       {{ partial "footer.html" . }}
 
       {{ partial "scripts.html" . }}
-
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/tiny-slider.css">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/min/tiny-slider.js"></script>
-      <script>
-        let slider;
-        if (window.matchMedia('(min-width: 1024px)').matches) {
-          slider = tns({
-            container: '.main-slider',
-            controls: false,
-            // center: true,
-            axis: 'vertical',
-            navPosition: 'bottom',
-            autoplayButtonOutput: false,
-            // autoplay: true,
-            autoplay: false,
-          });
-        } else {
-          slider = tns({
-            container: '.main-slider',
-            controls: false,
-            // center: true,
-            // axis: 'vertical',
-            navPosition: 'bottom',
-            autoplayButtonOutput: false,
-            // autoplay: true,
-            autoplay: false,
-          });
-        }
-
-        slider.events.on('transitionStart', handleBannerChange);
-        function handleBannerChange(info, eventName) {
-          document.querySelector('body').className = `body-style-${info.displayIndex}`;
-        }
-      </script>
-
     </body>
 </html>
