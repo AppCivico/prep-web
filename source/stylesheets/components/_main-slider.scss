@@ -132,7 +132,7 @@
     backface-visibility: hidden;
 
     @media screen and (min-width: breakpoint('desktop')) {
-      top: 1rem;
+      top: -1rem;
     }
 
     @media screen and (min-width: breakpoint('desktop')) and (min-height: breakpoint('tall')) {
