@@ -11,7 +11,7 @@
   flex-direction: column;
   justify-content: center;
   height: calc(100vh - 9rem);
-  min-height: 30rem;
+  min-height: 32rem;
   margin-top: -5rem;
 }
 
@@ -166,10 +166,7 @@
   }
 
   &::before {
-    top: -5.8rem;
-    left: 10%;
-    width: 5rem;
-    height: 3.5rem;
+    display: none;
     background: image('vision.svg');
     background-size: contain;
     background-repeat: no-repeat;
@@ -177,6 +174,7 @@
 
     @media screen and (min-height: breakpoint('tall')) {
       top: -7.5rem;
+      display: block;
       width: 7rem;
       height: 5rem;
     }
