@@ -9,7 +9,23 @@
         {{ end }}
     </ul>
     {{ end }}
-    <a href="https://www5.usp.br/" rel="noopener" class="usp-logo">USP</a>
     <a href="mailto:prep@email.com" class="contact">prep@email.com</a>
+  </div>
+  <div class="footer__partners">
+    <div class="container">
+      <p>Realização e parceiros</p>
+      {{ with $.Site.Data.partners }}
+        <ul class="footer__partners-list">
+          {{ range .list }}
+            <li>
+              <a href="{{ .url }}" title="{{ .name }}" rel="noopener" class="{{ .cssClass }}">{{ .name }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+      <div class="footer__by">
+        <p>Desenvolvido por <a href="https://appcivico.com" target="_blank">AppCívico</a></p>
+      </div>
+    </div>
   </div>
 </footer>

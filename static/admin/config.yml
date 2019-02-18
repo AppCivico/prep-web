@@ -23,14 +23,32 @@ collections:
       - {label: "weight", name: "weight", widget: "hidden", default: "4"}
       - {label: "Resposta", name: "body", widget: "markdown"}
 
+  - label: "Dúvidas (Principal)"
+    name: "duvidas-main"
+    create: false # Allow users to create new documents in this collection
+    delete: false # Allow users to delete documents in this collection
+    files:
+      - label: "Texto principal"
+        name: "main-text"
+        file: "content/duvidas.md"
+        fields:
+          - {label: "Título", name: "title", widget: "string"}
+          - {label: "Data", name: "date", widget: "datetime"}
+          - {label: "layout", name: "layout", widget: "hidden", default: "duvidas"}
+          - {label: "type", name: "type", widget: "hidden", default: "page"}
+          - {label: "url", name: "url", widget: "hidden", default: "/duvidas"}
+          - {label: "weight", name: "weight", widget: "hidden", default: "1"}
+          - {label: "draft", name: "draft", widget: "hidden", default: "false"}
+          - {label: "Texto", name: "body", widget: "markdown"}
+
 # Social
   -
     label: "Redes sociais"
-    name: "media"
+    name: "redes-sociais"
     files:
       -
         label: "Redes sociais"
-        name: "media"
+        name: "items"
         file: "data/socialMedia.yml"
         fields:
           -
@@ -52,3 +70,34 @@ collections:
                 label: "Slug"
                 name: "svg"
                 widget: "hidden"
+
+# Partners
+  -
+    label: "Parceiros"
+    name: "parceiros"
+    files:
+      -
+        label: "Parceiros"
+        name: "partners"
+        file: "data/partners.yml"
+        fields:
+          -
+            label: "Parceiros"
+            name: "list"
+            allow_add: false
+            widget: "list"
+            required: true
+            fields:
+              -
+                label: "Nome"
+                name: "name"
+                widget: "string"
+              -
+                label: "Css Class"
+                name: "cssClass"
+                widget: "hidden"
+              -
+                label: "Link"
+                name: "url"
+                widget: "string"
+
