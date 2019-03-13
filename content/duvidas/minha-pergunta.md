@@ -1,5 +1,5 @@
 ---
-title: Como o PREP pode me ajudar lorem ipsum
+title: Como o PREP ajuda lorem ipsum dolor sit amet?
 date: 2017-09-14T18:44:44.000Z
 layout: none
 type: duvidas
