@@ -32,7 +32,7 @@ collections:
         label: "layout"
         name: "layout"
         widget: "hidden"
-        default: "none";
+        default: "none"
       -
         label: "Resposta"
         name: "body"
