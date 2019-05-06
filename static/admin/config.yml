@@ -9,19 +9,39 @@ media_folder: "static/uploads" # Media files will be stored in the repo under im
 public_folder: "/uploads" # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
-  - name: "duvidas" # Used in routes, e.g., /admin/collections/blog
-    label: "Dúvidas" # Used in the UI
-    folder: "content/duvidas" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    delete: true # Allow users to delete documents in this collection
-    slug: "{{ slug }}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      - {label: "Pergunta", name: "title", widget: "string", required: true}
-      - {label: "Data", name: "date", widget: "datetime"}
-      - {label: "layout", name: "layout", widget: "hidden", default: "none"}
-      - {label: "type", name: "type", widget: "hidden", default: "duvidas"}
-      - {label: "weight", name: "weight", widget: "hidden", default: "4"}
-      - {label: "Resposta", name: "body", widget: "markdown"}
+  -
+    label: "Dúvidas"
+    name: "duvidas"
+    folder: "content/duvidas"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      -
+        label: "Dúvida"
+        name: "title"
+        widget: "string"
+        tagname: "h3"
+        pattern: ['.{3,40}', "Must have between 3 and 40 characters"]
+      -
+        label: "Data"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DDTHH:mm:ss[Z]" # date sample 2018-03-06T14:48:47-03:00
+      -
+        label: "layout"
+        name: "layout"
+        widget: "hidden"
+        default: "none";
+      -
+        label: "Resposta"
+        name: "body"
+        widget: "markdown"
+      -
+        label: "weight"
+        name: "weight"
+        widget: "hidden"
+        default: "1"
 
   - label: "Dúvidas (Principal)"
     name: "duvidas-main"
