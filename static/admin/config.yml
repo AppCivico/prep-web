@@ -38,10 +38,12 @@ collections:
         name: "body"
         widget: "markdown"
       -
-        label: "weight"
+        label: "Ordem"
         name: "weight"
-        widget: "hidden"
-        default: "1"
+        widget: "number"
+        default: 1
+        valueType: "int"
+        min: 0
 
   - label: "Dúvidas (Principal)"
     name: "duvidas-main"

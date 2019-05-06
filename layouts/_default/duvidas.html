@@ -18,7 +18,9 @@
         </article>
 
         {{ with (where $.Site.Pages "Type" "duvidas") }}
-          {{ range (where $.Site.Pages "Type" "duvidas") }}
+
+          {{ range ((where $.Site.Pages "Type" "duvidas") sort $.Site.Pages "weight" "desc") }}
+
             <article class="faq" id="{{ .Params.id }}">
 
                 {{ with .Title }}
