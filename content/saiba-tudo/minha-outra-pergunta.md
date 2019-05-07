@@ -2,7 +2,7 @@
 title: Como posso participar?
 date: 2019-04-28T18:44:44.000Z
 layout: none
-type: duvidas
+type: saiba-tudo
 weight: 4
 ---
 

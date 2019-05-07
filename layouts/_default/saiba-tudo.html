@@ -17,10 +17,15 @@
           {{ .Content }}
         </article>
 
+<<<<<<< HEAD:layouts/_default/duvidas.html
         {{ with (where $.Site.Pages "Type" "duvidas") }}
 
           {{ range ((where $.Site.Pages "Type" "duvidas") sort $.Site.Pages "weight" "desc") }}
 
+=======
+        {{ with (where $.Site.Pages "Type" "saiba-tudo") }}
+          {{ range (where $.Site.Pages "Type" "saiba-tudo") }}
+>>>>>>> Rename "duvidas" to "saiba tudo":layouts/_default/saiba-tudo.html
             <article class="faq" id="{{ .Params.id }}">
 
                 {{ with .Title }}

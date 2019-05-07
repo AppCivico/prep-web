@@ -19,9 +19,9 @@ menu:
     name: "Home"
     url: "/"
     weight: 1
-  - identifier: "Dúvidas"
-    name: "Dúvidas"
-    url: "/duvidas"
+  - identifier: "Saiba tudo"
+    name: "Saiba tudo"
+    url: "/saiba-tudo"
     weight: 2
 metaDataFormat: "yaml"
 title: "PrEP"
