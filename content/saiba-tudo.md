@@ -4,7 +4,6 @@ draft: false
 title: "Saiba Tudo"
 layout: saiba-tudo
 type: page
-url: /duvidas
 weight: 1
 url: "/saiba-tudo"
 ---
