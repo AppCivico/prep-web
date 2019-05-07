@@ -6,6 +6,8 @@
 }
 
 .site-footer .container {
+  justify-content: flex-end;
+
   @media screen and (min-width: breakpoint('desktop')) {
     display: flex;
     align-items: center;
