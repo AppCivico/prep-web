@@ -132,14 +132,14 @@ body {
 .home-page body {
   &::before {
     position: absolute;
+    left: 3.25rem;
     display: none;
     z-index: 1;
     width: 28%;
     height: 100%;
     max-width: 27.125rem;
-    // background-image: image('amanda.svg');
     background-image: image('amanda.png');
-    background-position: -2.125rem calc(100% - 8.75rem);
+    background-position: 0 calc(100% - 8.75rem);
     background-size: contain;
     background-repeat: no-repeat;
     content: '';
