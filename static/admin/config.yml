@@ -50,20 +50,20 @@ collections:
         valueType: "int"
         min: 0
 
-  - label: "Dúvidas (Principal)"
-    name: "duvidas-main"
+  - label: "Introdução"
+    name: "saiba-tudo"
     create: false # Allow users to create new documents in this collection
     delete: false # Allow users to delete documents in this collection
     files:
       - label: "Texto principal"
         name: "main-text"
-        file: "content/duvidas.md"
+        file: "content/saiba-tudo.md"
         fields:
           - {label: "Título", name: "title", widget: "string"}
           - {label: "Data", name: "date", widget: "datetime"}
-          - {label: "layout", name: "layout", widget: "hidden", default: "duvidas"}
+          - {label: "layout", name: "layout", widget: "hidden", default: "saiba-tudo"}
           - {label: "type", name: "type", widget: "hidden", default: "page"}
-          - {label: "url", name: "url", widget: "hidden", default: "/duvidas"}
+          - {label: "url", name: "url", widget: "hidden", default: "/saiba-tudo"}
           - {label: "weight", name: "weight", widget: "hidden", default: "1"}
           - {label: "draft", name: "draft", widget: "hidden", default: "false"}
           - {label: "Texto", name: "body", widget: "markdown"}
