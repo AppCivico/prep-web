@@ -11,10 +11,8 @@ CEP FM-USP:
 * Endereço: Av. Dr. Arnaldo, 251 - 21º andar - sala 36
 * Cerqueira César - São Paulo - SP - CEP: 01246-000
 * Horário de atendimento: 2ª a 6ª feira das 10h às 17h
-* E-mail: cep.fm@usp.br 
 * Telefone: 55 11 3893 4401/4407
-
-
+* E-mail: cep.fm@usp.br 
 
 CEP UFMG:
 
@@ -24,12 +22,10 @@ CEP UFMG:
 * Telefone: 3409-4592 
 * E-mail: coep@prpq.ufmg.br
 
-
-
 CEP ISC/UFBA
 
 * Site: http://www.isc.ufba.br/comite-de-etica-pt/
 * Endereço: Rua Basílio da Gama, s/n – 2º andar – 40110-040 – Salvador – Bahia
 * Horário de funcionamento: 2ª a 6ª feira, das 08 às 12h e 13 às 16h.
-* Tel. (71) 3283-7419
+* Telefone: (71) 3283-7419
 * Email: cepisc@ufba.br
