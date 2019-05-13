@@ -3,7 +3,7 @@ title: 'Onde acontece?  '
 date: '2019-05-10T12:07:21Z'
 layout: none
 type: saiba-tudo
-weight: 1
+weight: 4
 ---
 Salvador, BA: Casarão da Diversidade: Rua do Tijolo, 8, Pelourinho, 2º andar, CEP 40020-290. Telefone: (71) 99102-2234; (71) 3321-4576. Aberto de segunda à sexta-feira, de 9h às 17h.
 
