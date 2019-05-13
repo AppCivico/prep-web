@@ -3,7 +3,7 @@ title: 'Como posso tirar mais dúvidas? '
 date: '2019-05-10T12:41:22Z'
 layout: none
 type: saiba-tudo
-weight: 1
+weight: 14
 ---
 Você pode acessar a Amanda Selfie via Messenger (linkar Amanda); ou
 
