@@ -3,7 +3,7 @@ title: Como posso contatar o Comitê de Ética em Pesquisa (CEP)?
 date: '2019-05-10T12:45:00Z'
 layout: none
 type: saiba-tudo
-weight: 1
+weight: 13
 ---
 CEP FM-USP: 
 
