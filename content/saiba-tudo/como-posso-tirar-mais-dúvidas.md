@@ -7,7 +7,7 @@ weight: 14
 ---
 Você pode acessar a Amanda Selfie via Messenger (linkar Amanda); ou
 
-Você pode mandar um email para as equipes de cada cidade do estudo: contatosp@prep1519.org/ contatobh@prep1519.org/ contatossa@prep1519.org; ou
+Você pode mandar um email para as equipes de cada cidade do estudo: contatosp@prep1519.org / contatobh@prep1519.org / contatossa@prep1519.org; ou
 
 Você pode ligar para os serviços que participam do estudo:
 
