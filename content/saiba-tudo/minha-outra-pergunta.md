@@ -3,7 +3,7 @@ title: Como posso participar?
 date: 2019-04-28T18:44:44.000Z
 layout: none
 type: saiba-tudo
-weight: 4
+weight: 2
 ---
 Qualquer pessoa que atenda os critérios de participação (15 a 19 anos, gay/trans/travesti, relações sexuais e situação de exposição) ) e que more em uma das 3 cidades participantes do estudo (ou perto delas) pode participar. Para começar, você pode:
 
