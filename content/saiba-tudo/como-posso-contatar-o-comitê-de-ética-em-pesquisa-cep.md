@@ -29,7 +29,3 @@ CEP ISC/UFBA
 * Horário de funcionamento: 2ª a 6ª feira, das 08 às 12h e 13 às 16h.
 * Telefone: (71) 3283-7419
 * Email: cepisc@ufba.br
-
-
-
-[abc](https://google.com) [def](https://youtube.com)
