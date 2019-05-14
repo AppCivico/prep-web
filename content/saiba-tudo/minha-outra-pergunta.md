@@ -5,7 +5,7 @@ layout: none
 type: saiba-tudo
 weight: 2
 ---
-Qualquer pessoa que atenda os critérios de participação (15 a 19 anos, gay/trans/travesti, relações sexuais e situação de exposição) ) e que more em uma das 3 cidades participantes do estudo (ou perto delas) pode participar. Para começar, você pode:
+Qualquer pessoa que atenda os critérios de participação (15 a 19 anos, gay/trans/travesti, relações sexuais e situação de exposição) e que more em uma das 3 cidades participantes do estudo (ou perto delas) pode participar. Para começar, você pode:
 
 1. Entrar em contato com a Amanda Selfie pelo Messenger: neste link, Amanda vai te fazer algumas perguntas, te contar mais sobre o estudo e, se você atender aos critérios de participação ela mesma vai te agendar uma primeira visita aos locais onde o estudo acontece; ou
 2. Ir direto a um dos locais onde o estudo acontece. 
