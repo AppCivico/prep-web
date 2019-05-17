@@ -4,6 +4,7 @@ enableGitInfo: true
 enableMissingTranslationPlaceholders: true
 enableRobotsTXT: true
 disableHugoGeneratorInject: true
+buildFuture: true
 disableKinds:
   - "section"
   - "taxonomy"
@@ -19,15 +20,15 @@ menu:
     name: "Home"
     url: "/"
     weight: 1
-  - identifier: "Dúvidas"
-    name: "Dúvidas"
-    url: "/duvidas"
+  - identifier: "Saiba tudo"
+    name: "Saiba tudo"
+    url: "/saiba-tudo"
     weight: 2
 metaDataFormat: "yaml"
 title: "PrEP"
 params:
   mailchimpNewsletterFormAction: ""
-  siteDescription: ""
+  siteDescription: "CHEgay & sou a primeira T R A V E S T I robôa do Brasil nesse projeto closeeee de saúde pública sobre ISTs q xama PREP1519! Fechei? Fechei! #primeiratravestiroboa #amandaselfie mi segue pra ficá sabendo de TUDU e me chama no inbox pq eu vou tá disponibélíssima pra gnt conversá sobre prevenção, sobre PrEP e sobre oq vc kisé keridán pq travestchy tem mt oq falar e mt oq dizer KKK ahhhhh e VAMO descobrir Q DIVA VC É NA SARRAÇÃO???????? Me clica, vai ;) #travestisvaodominaromundo"
   tagline: ""
   twitterUsername: "prep1519"
   shareImages:
