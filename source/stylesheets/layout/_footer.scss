@@ -6,19 +6,14 @@
 }
 
 .site-footer .container {
-  justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
 
   @media screen and (min-width: breakpoint('desktop')) {
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
+    align-items: flex-end;
+    flex-wrap: wrap;
   }
 }
-
-.home-page .site-footer .container {
-  max-width: 60rem;
-}
-
 
 .social {
   display: block;
@@ -26,7 +21,7 @@
   margin: 0 0 1.5em;
 
   @media screen and (min-width: breakpoint('desktop')) {
-    margin-bottom: 0;
+    margin-bottom: 0.6rem;
   }
 }
 
@@ -66,21 +61,19 @@
   background-image: image('instagram.svg');
 }
 
-.contact {
-  font-size: ms(-1);
+.site-footer__email {
+  display: block;
+  width: 100%;
   color: palette('orange');
 
   @media screen and (min-width: breakpoint('desktop')) {
-    margin-left: 3.125rem;
-  }
-
-  @media screen and (min-width: breakpoint('wide')) {
-    font-size: ms(1);
+    display: inline;
   }
 }
 
 .footer__partners {
   padding-top: 1rem;
+  padding-bottom: 1rem;
   margin-top: 1rem;
   overflow: hidden;
   font-size: ms(-1);
@@ -103,11 +96,13 @@
 }
 
 .footer__partners-list {
+  flex-wrap: wrap;
   padding-left: 0;
 
   @media screen and (min-width: breakpoint('phablet')) {
     display: flex;
     align-items: center;
+    margin-right: auto;
   }
 
   @media screen and (min-width: breakpoint('desktop')) {
@@ -132,7 +127,7 @@
   }
 }
 
-.footer__partners-list a {
+.footer__partners-list li a {
   display: block;
   width: 1.875em;
   height: 1.875em;
@@ -160,10 +155,39 @@
   background-image: image('uneb-logo.svg');
 }
 
-.footer__by {
+.contact {
+  order: 1;
+  width: 100%;
+  font-size: ms(0);
+  color: palette('orange');
+
   @media screen and (min-width: breakpoint('desktop')) {
+  }
+
+  @media screen and (min-width: breakpoint('wide')) {
+    font-size: ms(1);
+  }
+}
+
+.contact a {
+  @media screen and (min-width: breakpoint('desktop')) {
+    display: inline;
+  }
+}
+
+
+.footer__by {
+  order: 2;
+  margin-top: 1rem;
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    margin-top: -1.2rem;
     margin-left: auto;
   }
+}
+
+.footer__by p {
+  margin-bottom: 0;
 }
 
 .footer__by a {
