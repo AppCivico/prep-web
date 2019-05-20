@@ -44,6 +44,9 @@
   <meta name="theme-color" content="#cc066c">
 	<!-- END FAVICON -->
 
+
+  <link rel="canonical" href="{{ .Permalink }}" />
+
 	{{ with $.Site.Params.shareImages.default }}
 	<meta name="image" content="{{ . | absURL }}">
 	{{ end }}
