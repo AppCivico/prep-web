@@ -5,7 +5,7 @@ layout: none
 type: saiba-tudo
 weight: 14
 ---
-Você pode acessar a [Amanda Selfie ](https://www.facebook.com/messages/t/amandaselfie.bot)via Messenger; ou
+Você pode acessar a [Amanda Selfie](https://www.facebook.com/amandaselfie.bot/); ou
 
 Você pode mandar um email para as equipes de cada cidade do estudo: contatosp@prep1519.org / contatobh@prep1519.org / contatossa@prep1519.org; ou
 
