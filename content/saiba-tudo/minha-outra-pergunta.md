@@ -7,7 +7,7 @@ weight: 2
 ---
 Qualquer pessoa que atenda os critérios de participação (15 a 19 anos, gay/trans/travesti, relações sexuais e situação de exposição) e que more em uma das 3 cidades participantes do estudo (ou perto delas) pode participar. Para começar, você pode:
 
-1. Entrar em contato com a Amanda Selfie pelo Messenger: neste link, Amanda vai te fazer algumas perguntas, te contar mais sobre o estudo e, se você atender aos critérios de participação ela mesma vai te agendar uma primeira visita aos locais onde o estudo acontece; ou
+1. Entrar em contato com a [Amanda Selfie](https://www.facebook.com/messages/t/amandaselfie.bot) pelo Messenger: neste link, Amanda vai te fazer algumas perguntas, te contar mais sobre o estudo e, se você atender aos critérios de participação ela mesma vai te agendar uma primeira visita aos locais onde o estudo acontece; ou
 2. Ir direto a um dos locais onde o estudo acontece. 
 
 * Salvador, BA: Casarão da Diversidade - Rua do Tijolo, 8, Pelourinho, 2º andar, CEP 40020-290. Atendimento de segunda à sexta-feira, de 9h às 16h. 
