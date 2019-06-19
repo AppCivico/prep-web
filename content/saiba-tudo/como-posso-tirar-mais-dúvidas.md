@@ -7,9 +7,11 @@ weight: 14
 ---
 Você pode acessar a [Amanda Selfie](https://www.facebook.com/amandaselfie.bot/); ou
 
-Você pode mandar um email para as equipes de cada cidade do estudo: contatosp@prep1519.org / contatobh@prep1519.org / contatossa@prep1519.org; ou
+Você pode mandar um email para a equipe do estudo: contato@prep1519.org 
 
-Você pode ligar para os serviços que participam do estudo:
+Se a sua questão for específica para algumas das cidades onde o estudo acontece, pode escrever diretamente para as equipes de cada uma delas: consultasalvador@prep1519.org  / consultabh@prep1519.org / consultasp@prep1519.org.  
+
+Você pode também ligar para os serviços que participam do estudo:
 
 * Belo Horizonte: (31) 99726-9307 (telefone e whatsapp)
 * Salvador: Telefone/WhatsApp: (71) 9.9640 9030 (telefone e whatsapp)
