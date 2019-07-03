@@ -50,6 +50,42 @@ collections:
         valueType: "int"
         min: 0
 
+  -
+    label: "Agenda"
+    name: "Agenda"
+    create: false
+    delete: false
+    files:
+      - label: "Texto principal"
+        name: "main-text"
+        file: "content/agenda.md"
+        fields:
+          -
+            label: "Título"
+            name: "title"
+            widget: "string"
+            tagname: "h3"
+            pattern: ['.{3,40}', "Must have between 3 and 40 characters"]
+          -
+            label: "Data"
+            name: "date"
+            widget: "datetime"
+            format: "YYYY-MM-DDTHH:mm:ss[Z]" # date sample 2018-03-06T14:48:47-03:00
+          -
+            label: "layout"
+            name: "layout"
+            widget: "hidden"
+            default: "agenda"
+          -
+            label: "type"
+            name: "type"
+            widget: "hidden"
+            default: "page"
+          -
+            label: "Conteúdo"
+            name: "body"
+            widget: "markdown"
+
   - label: "Introdução"
     name: "saiba-tudo"
     create: false # Allow users to create new documents in this collection
