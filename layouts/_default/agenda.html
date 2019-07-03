@@ -1,0 +1,19 @@
+{{ partial "head.html" . }}
+
+    <body class="body-style-4">
+      {{ partial "header.html" . }}
+
+      <div class="container container--flex">
+        <article class="faq">
+          <h1>{{ .Title }}</h1>
+          {{ .Content }}
+        </article>
+      </div>
+
+      {{ partial "footer.html" . }}
+
+      {{ partial "scripts.html" . }}
+
+    </body>
+</html>
+
