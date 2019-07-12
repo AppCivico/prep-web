@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="/home/eduruiz/code/prep/source/scripts/back-to-top/index.js">
+<testcase time="0" name="/home/eduruiz/code/prep/source/scripts/back-to-top/index.js" />
+</testsuite>
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="/home/eduruiz/code/prep/source/scripts/index.js">
+<testcase time="0" name="/home/eduruiz/code/prep/source/scripts/index.js" />
+</testsuite>
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="/home/eduruiz/code/prep/source/scripts/slider/index.js">
+<testcase time="0" name="/home/eduruiz/code/prep/source/scripts/slider/index.js" />
+</testsuite>
+<testsuite package="org.eslint" time="0" tests="1" errors="0" name="/home/eduruiz/code/prep/source/scripts/vendor.js">
+<testcase time="0" name="/home/eduruiz/code/prep/source/scripts/vendor.js" />
+</testsuite>
+</testsuites>

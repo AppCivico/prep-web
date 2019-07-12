@@ -24,6 +24,10 @@ menu:
     name: "Saiba tudo"
     url: "/saiba-tudo"
     weight: 2
+  - identifier: "Agenda"
+    name: "Agenda"
+    url: "/agenda"
+    weight: 3
 metaDataFormat: "yaml"
 title: "Amanda Selfie"
 params:
