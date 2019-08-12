@@ -8,6 +8,7 @@
 [[headers]]
   # Define which paths this specific [[headers]] block will cover.
   for = "/relatorio/*"
+  [headers.values]
     # Basic-Auth allows you to password protect your whole site.
     # This feature may not be available on all plans.
     Basic-Auth = "USER_PLACEHOLDER:PASS_PLACEHOLDER"
