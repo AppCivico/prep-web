@@ -1,0 +1,70 @@
+{{ partial "head.html" . }}
+
+    <body class="body-style-4">
+      {{ partial "header.html" . }}
+
+      <style>
+          .report {
+            display: flex;
+            justify-content: space-between;
+            flex-grow: 0;
+            flex-shrink: 0;
+          }
+
+          .report__item {
+            width: 15%;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 5px;
+            background: #fff;
+          }
+      </style>
+
+      <div class="container container--flex">
+        <article class="faq">
+          <h1>{{ .Title }}</h1>
+        </article>
+
+        <article class="report">
+        </article>
+      </div>
+
+      <script>
+        const security_token = {{ getenv "SECURITY_TOKEN" }}
+
+        // url (required), options (optional)
+        fetch('https://dev-prep-api.appcivico.com/api/report?security_token=' + security_token, {
+          method: 'get'
+        })
+        .then((response) => response.json())
+        .then(function(data) {
+          $reportList = document.querySelector('.report');
+
+          for (const key of Object.keys(data)) {
+            const $item = document.createElement('section');
+            const $title = document.createElement('h1');
+            const $text = document.createElement('p');
+
+            $item.className = 'report__item';
+            $title.textContent = data[key].label;
+            $text.textContent = data[key].value;
+
+            $item.append($title);
+            $item.append($text);
+
+            $reportList.append($item);
+          }
+        })
+        .catch(function(err) {
+          console.log('Error :(')
+          // Error :(
+        });
+      </script>
+
+      {{ partial "footer.html" . }}
+
+      {{ partial "scripts.html" . }}
+
+    </body>
+</html>
+
