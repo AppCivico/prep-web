@@ -1,0 +1,84 @@
+{{ partial "head.html" . }}
+
+    <body class="body-style-4">
+      {{ partial "header.html" . }}
+
+      <style>
+          .report {
+            display: flex;
+            flex-wrap: wrap;
+            flex-grow: 0;
+            flex-shrink: 0;
+          }
+
+          .report__item {
+            display: flex;
+            flex: 1 0 15%;
+            flex-direction: column;
+            width: 15%;
+            min-width: min-content;
+            padding: 1rem;
+            margin: 0.4em;
+            text-align: center;
+            border-radius: 5px;
+            background: #fff;
+          }
+
+          .report__item p {
+            font-size: 1.5em;
+            margin-top: auto;
+          }
+      </style>
+
+      <div class="container container--flex">
+        <article class="faq">
+          <h1>{{ .Title }}</h1>
+        </article>
+
+        <article class="report">
+        </article>
+      </div>
+
+      <script>
+        {{ getenv "NODE_ENV" }}
+        {{ if eq (getenv "NODE_ENV") "production" }}
+          const security_token = {{ getenv "SECURITY_TOKEN" }}
+        {{ else }}
+          const security_token = {{ getenv "DEV_SECURITY_TOKEN" }}
+        {{ end }}
+
+        fetch('https://dev-prep-api.appcivico.com/api/report?security_token=' + security_token, {
+          method: 'get'
+        })
+        .then((response) => response.json())
+        .then(function(data) {
+          $reportList = document.querySelector('.report');
+
+          for (const key of Object.keys(data)) {
+            const $item = document.createElement('section');
+            const $title = document.createElement('h1');
+            const $text = document.createElement('p');
+
+            $item.className = 'report__item';
+            $title.textContent = data[key].label;
+            $text.textContent = data[key].value;
+
+            $item.append($title);
+            $item.append($text);
+
+            $reportList.append($item);
+          }
+        })
+        .catch(function(err) {
+          console.log('Error :(')
+          // Error :(
+        });
+      </script>
+
+      {{ partial "footer.html" . }}
+
+      {{ partial "scripts.html" . }}
+
+    </body>
+</html>
+

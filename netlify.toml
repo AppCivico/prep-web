@@ -1,0 +1,14 @@
+# Global settings applied to the whole site.
+#
+# “base” is the directory to change to before starting build. If you set base:
+#        that is where we will look for package.json/.nvmrc/etc, not repo root!
+# “command” is your build command.
+# “publish” is the directory to publish (relative to the root of your repo).
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/relatorio/*"
+  [headers.values]
+    # Basic-Auth allows you to password protect your whole site.
+    # This feature may not be available on all plans.
+    Basic-Auth = "USER_PLACEHOLDER:PASS_PLACEHOLDER"
