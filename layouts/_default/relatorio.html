@@ -40,8 +40,8 @@
       </div>
 
       <script>
-        {{ getenv "NODE_ENV" }}
-        {{ if eq (getenv "NODE_ENV") "production" }}
+        {{ getenv "CONTEXT" }}
+        {{ if eq (getenv "CONTEXT") "production" }}
           const security_token = {{ getenv "SECURITY_TOKEN" }}
         {{ else }}
           const security_token = {{ getenv "DEV_SECURITY_TOKEN" }}
