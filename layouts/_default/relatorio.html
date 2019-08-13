@@ -40,14 +40,15 @@
       </div>
 
       <script>
-        {{ getenv "CONTEXT" }}
         {{ if eq (getenv "CONTEXT") "production" }}
           const security_token = {{ getenv "SECURITY_TOKEN" }}
+          const api = 'https://api-prep.appcivico.com/api/'
         {{ else }}
           const security_token = {{ getenv "DEV_SECURITY_TOKEN" }}
+          const api = 'https://dev-prep-api.appcivico.com/api/'
         {{ end }}
 
-        fetch('https://dev-prep-api.appcivico.com/api/report?security_token=' + security_token, {
+        fetch(api + 'report?security_token=' + security_token, {
           method: 'get'
         })
         .then((response) => response.json())
