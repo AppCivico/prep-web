@@ -30,9 +30,13 @@
       </div>
 
       <script>
-        const security_token = {{ getenv "SECURITY_TOKEN" }}
+        {{ getenv "NODE_ENV" }}
+        {{ if eq (getenv "NODE_ENV") "production" }}
+          const security_token = {{ getenv "SECURITY_TOKEN" }}
+        {{ else }}
+          const security_token = {{ getenv "DEV_SECURITY_TOKEN" }}
+        {{ end }}
 
-        // url (required), options (optional)
         fetch('https://dev-prep-api.appcivico.com/api/report?security_token=' + security_token, {
           method: 'get'
         })
