@@ -6,17 +6,27 @@
       <style>
           .report {
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
             flex-grow: 0;
             flex-shrink: 0;
           }
 
           .report__item {
+            display: flex;
+            flex: 1 0 15%;
+            flex-direction: column;
             width: 15%;
+            min-width: min-content;
             padding: 1rem;
+            margin: 0.4em;
             text-align: center;
             border-radius: 5px;
             background: #fff;
+          }
+
+          .report__item p {
+            font-size: 1.5em;
+            margin-top: auto;
           }
       </style>
 
