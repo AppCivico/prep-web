@@ -5,13 +5,16 @@
 
       <style>
           .report {
+          }
+
+          .report__item {
             display: flex;
             flex-wrap: wrap;
             flex-grow: 0;
             flex-shrink: 0;
           }
 
-          .report__item {
+          .report__item-intern {
             display: flex;
             flex: 1 0 15%;
             flex-direction: column;
@@ -22,6 +25,23 @@
             text-align: center;
             border-radius: 5px;
             background: #fff;
+          }
+
+          .report__item-intern:nth-child(2n) {
+            margin-left: 0;
+          }
+
+          .report__item-intern:last-child {
+            margin-right: 0;
+          }
+
+          .report__item h1 {
+            width: 100%;
+            margin-top: 1em;
+            margin-bottom: 0.2em;
+            text-transform: capitalize;
+            font-size: 2em;
+            color: #fff;
           }
 
           .report__item p {
@@ -52,23 +72,41 @@
           method: 'get'
         })
         .then((response) => response.json())
-        .then(function(data) {
+        .then((data) => {
           $reportList = document.querySelector('.report');
 
-          for (const key of Object.keys(data)) {
+          data.cities.forEach((city) => {
+
             const $item = document.createElement('section');
             const $title = document.createElement('h1');
-            const $text = document.createElement('p');
 
             $item.className = 'report__item';
-            $title.textContent = data[key].label;
-            $text.textContent = data[key].value;
+
+            $title.textContent = Object.keys(city)[0];
 
             $item.append($title);
-            $item.append($text);
 
-            $reportList.append($item);
-          }
+            for (const key of Object.keys(city)) {
+              Object.keys(city[key]).forEach(ikey => {
+
+                const $itemIntern = document.createElement('div');
+                const $subtitle = document.createElement('h2');
+                const $text = document.createElement('p');
+
+                $itemIntern.className = 'report__item-intern';
+
+                $subtitle.textContent = city[key][ikey].label;
+                $text.textContent = city[key][ikey].value;
+
+                $itemIntern.append($subtitle);
+                $itemIntern.append($text);
+
+                $item.append($itemIntern);
+
+                $reportList.append($item);
+              });
+            }
+          })
         })
         .catch(function(err) {
           console.log('Error :(')
