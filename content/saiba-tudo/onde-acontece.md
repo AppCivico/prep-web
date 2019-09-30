@@ -5,9 +5,9 @@ layout: none
 type: saiba-tudo
 weight: 4
 ---
-Salvador, BA: Casarão da Diversidade: Rua do Tijolo, 8, Pelourinho, 2º andar, CEP 40020-290. Telefone: (71) 99102-2234; (71) 9.9640 9030. Atendimento de segunda à sexta-feira, de 9h às 16h.
+Salvador, BA: Casarão da Diversidade: Rua do Tijolo, 8, Pelourinho, 2º andar. Telefone: (71) 99102-2234; (71) 9.9640 9030. Atendimento de segunda à sexta-feira, de 9h às 16h.
 
-Belo Horizonte, MG: Rua Guaicurus, 50 - Centro, Belo Horizonte - MG, 30110-009. Telefone: (31) 99726-9307. Atendimentos às quartas-feiras, a partir das 18h.
+Belo Horizonte, MG: Rua Guaicurus, 50 - Centro. Telefone: (31) 99726-9307. Atendimentos segunda-feira das 18h às 21h e de terça a sexta-feira das 14h às 17h30.
 
 São Paulo, SP:
 
