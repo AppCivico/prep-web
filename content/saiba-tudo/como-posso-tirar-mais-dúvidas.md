@@ -9,7 +9,8 @@ Você pode acessar a [Amanda Selfie](https://www.facebook.com/amandaselfie.bot/)
 
 Você pode mandar um email para a equipe do estudo: contato@prep1519.org 
 
-Se a sua questão for específica para algumas das cidades onde o estudo acontece, pode escrever diretamente para as equipes de cada uma delas: consultasalvador@prep1519.org  / consultabh@prep1519.org / consultasp@prep1519.org.  
+Se a sua questão for específica para algumas das cidades onde o estudo acontece, pode escrever diretamente para as equipes de cada uma delas: consultasalvador@prep1519.org  / consultabh@prep1519.org 
+/ consultasp@prep1519.org.  
 
 Você pode também ligar para os serviços que participam do estudo:
 
@@ -19,8 +20,8 @@ Você pode também ligar para os serviços que participam do estudo:
 
 Ou ainda, você pode ir a um dos serviços que participam do estudo:
 
-* Salvador, BA: Casarão da Diversidade - Rua do Tijolo, 8, Pelourinho, 2º andar, CEP 40020-290. Atendimento de segunda à sexta-feira, de 9h às 16h.
-* Belo Horizonte, MG: Centro de Referência da Juventude - Rua Guaicurus, 50 - Centro, Belo Horizonte - MG, 30110-009. Atendimento às quartas-feiras, a partir das 18h.
+* Salvador, BA: Casarão da Diversidade - Rua do Tijolo, 8, Pelourinho, 2º andar. Atendimento de segunda à sexta-feira, de 9h às 16h.
+* Belo Horizonte, MG: Centro de Referência da Juventude - Rua Guaicurus, 50 - Centro. Atendimento segunda-feira de 18h às 21h e de terça à sexta-feira de 14h às 17h30.
 * São Paulo, SP:
    Centro de Testagem e Aconselhamento Henfil - CTA Henfil. R. Líbero Badaró, 144 - Centro. Telefone: 11 3106-5352 ou 9.8209-2911 (WhatsApp). Atendimento de segunda à sexta-feira, de 7h às 18h30
-  ; eCasa 1:  R. Adoniran Barbosa, 151 - Bela Vista. Aberto de segunda à sábado das 10:00 às 22:00.
+  ; e Casa 1:  R. Adoniran Barbosa, 151 - Bela Vista. Aberto de segunda à sábado das 10:00 às 22:00.
