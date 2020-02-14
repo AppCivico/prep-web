@@ -12,6 +12,8 @@
             flex-wrap: wrap;
             flex-grow: 0;
             flex-shrink: 0;
+            margin-left: -0.4rem;
+            margin-right: -0.4rem;
           }
 
           .report__item-intern {
@@ -27,10 +29,6 @@
             background: #fff;
           }
 
-          .report__item-intern:nth-child(2) {
-            margin-left: 0;
-          }
-
           .report__item-intern:last-child {
             margin-right: 0;
           }
@@ -44,20 +42,126 @@
             color: #fff;
           }
 
+          h1,
+          h2,
+          h3 {
+            width: 100%;
+            color: #fff;
+          }
+
+          .report__item-intern h2,
+          .report__item-intern h3 {
+            color: #000;
+          }
+
           .report__item p {
             font-size: 1.5em;
             margin-top: auto;
+            max-width: 100%;
           }
       </style>
 
-      <div class="container container--flex">
+      <div id="app" class="container container--flex">
         <article class="faq">
           <h1>{{ .Title }}</h1>
         </article>
+        <form @submit.prevent="updateCity">
+          <select
+            v-model="city"
+            id="city"
+            name="city"
+          >
+            <option value="todas">Todas</option>
+            <option value="bh">Belo Horizonte</option>
+            <option value="sp">São Paulo</option>
+            <option value="ssa">Salvador</option>
+          </select>
+          <button type="submit">Alterar Cidade</button>
+        </form>
+        <article class="report">
+          <h1>Público Geral</h1>
+          <h2>Interações Recentes</h2>
+          <div class="report__item" v-if="generalInteractions">
+            <div class="report__item-intern" v-for="(interaction, index) in generalInteractions.metrics">
+              <h2>{{ "{{ interaction.label }}" }}</h2>
+              <p>{{ "{{ interaction.value }}" }}</p>
+            </div>
+          </div>
+          <h2>Interações gerais</h2>
+          <form @submit.prevent="filterGeneral">
+            <input
+              v-model="generalDate"
+              readonly
+              required
+              class="datepicker"
+              autocomplete="off"
+              name="whatever"
+              id="datepicker"
+              ></input>
+            <button type="submit">Filtrar</button>
+          </form>
+          <div class="report__item" v-if="generalPublic">
+            <div class="report__item-intern" v-for="(interaction, index) in generalPublic.metrics">
+              <h2>{{ "{{ interaction.label }}" }}</h2>
+              <p>{{ "{{ interaction.value }}" }}</p>
+            </div>
+          </div>
+        </article>
 
         <article class="report">
+          <h1>Público de Interesse</h1>
+          <h2>Interações Recentes</h2>
+          <div class="report__item" v-if="targetInteractions">
+            <div class="report__item-intern" v-for="(interaction, index) in targetInteractions.metrics">
+              <h2>{{ "{{ interaction.label }}" }}</h2>
+              <p>{{ "{{ interaction.value }}" }}</p>
+            </div>
+          </div>
+
+          <h2>Interações gerais</h2>
+          <form @submit.prevent="filterInterest">
+            <input
+              v-model="interestDate"
+              readonly
+              required
+              class="datepicker"
+              autocomplete="off"
+              name="whatever"
+              id="datepicker-interest"
+              ></input>
+            <button type="submit">Filtrar</button>
+          </form>
+
+          <div class="report__item" v-if="targetPublic">
+            <template v-for="(interaction, index) in targetPublic.metrics">
+              <template v-if="!interaction.metrics">
+                <div class="report__item-intern">
+                  <h2>{{ "{{ interaction.label }}" }}</h2>
+                  <p>{{ "{{ interaction.value }}" }}</p>
+                </div>
+              </template>
+            </template>
+          </div>
+
+          <div class="report__item" v-if="targetPublic">
+            <template v-for="(interaction, index) in targetPublic.metrics">
+              <template v-if="interaction.metrics">
+                <h2>{{ "{{ interaction.sub_group }}" }}</h2>
+                <template v-for="subinteraction in interaction.metrics">
+                  <div class="report__item-intern">
+                    <h3>{{ "{{ subinteraction.label }}" }}</h3>
+                    <p>{{ "{{ subinteraction.value }}" }}</p>
+                  </div>
+                </template>
+              </template>
+            </template>
+          </div>
         </article>
       </div>
+
+      <!-- development version, includes helpful console warnings -->
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/js/main.js"></script>
 
       <script>
         {{ if eq (getenv "CONTEXT") "production" }}
@@ -68,89 +172,211 @@
           const api = 'https://dev-prep-api.appcivico.com/api/'
         {{ end }}
 
-
-        function sortObjects(data, attr) {
-          var arr = [];
-          for (var prop in data) {
-            if (data.hasOwnProperty(prop)) {
-              var obj = {};
-              obj[prop] = data[prop];
-              obj.tempSortName = data[prop][attr];
-              arr.push(obj);
-            }
-          }
-
-          arr.sort(function(a, b) {
-            var at = a.tempSortName,
-              bt = b.tempSortName;
-            return at > bt ? 1 : ( at < bt ? -1 : 0 );
-          });
-
-          var result = [];
-          for (var i=0, l=arr.length; i<l; i++) {
-            var obj = arr[i];
-            delete obj.tempSortName;
-            for (var prop in obj) {
-              if (obj.hasOwnProperty(prop)) {
-                var id = prop;
-              }
-            }
-            var item = obj[id];
-            result.push(item);
-          }
-          return result;
-        }
-
-        fetch(api + 'report?security_token=' + security_token, {
-          method: 'get'
-        })
-        .then((response) => response.json())
-        .then((data) => {
-          $reportList = document.querySelector('.report');
-
-          data.cities.forEach((city) => {
-
-            const $item = document.createElement('section');
-            const $title = document.createElement('h1');
-
-            $item.className = 'report__item';
-
-            $title.textContent = Object.keys(city)[0];
-
-            $item.append($title);
-
-            let sorted = {};
-
-            for (const key of Object.keys(city)) {
-              sorted = sortObjects(city[key], 'display_order')
-              sorted.forEach(item => {
-                console.log(item);
-
-                const $itemIntern = document.createElement('div');
-                const $subtitle = document.createElement('h2');
-                const $text = document.createElement('p');
-
-                $itemIntern.className = 'report__item-intern';
-
-                $subtitle.textContent = item.label;
-                $text.textContent = item.value;
-
-                $itemIntern.append($subtitle);
-                $itemIntern.append($text);
-
-                $item.append($itemIntern);
-
-                $reportList.append($item);
+        const app = new Vue({
+          el: '#app',
+          data: {
+            generalInteractions: null,
+            targetInteractions: null,
+            generalPublic: null,
+            targetPublic: null,
+            generalDate: null,
+            interestDate: null,
+            city: 'todas',
+            api: api,
+          },
+          mounted() {
+            this.getGeneralInteractions();
+            this.getGeneralPublic();
+            this.getTargetInteractions();
+            this.getTargetPublic();
+          },
+          methods: {
+            updateCity() {
+              this.getGeneralInteractions();
+              this.getGeneralPublic();
+              this.getTargetInteractions();
+              this.getTargetPublic();
+            },
+            filterGeneral() {
+              const startDate = picker.getStartDate().getTime();
+              const endDate = picker.getEndDate().getTime();
+              this.getGeneralPublic(startDate, endDate);
+            },
+            filterInterest() {
+              const startDate = interestPicker.getStartDate().getTime();
+              const endDate = interestPicker.getEndDate().getTime();
+              this.getTargetPublic(startDate, endDate);
+            },
+            getGeneralInteractions() {
+              fetch(`${api}report/interaction?security_token=${security_token}&city=${city.value}`, {
+                method: 'get'
               })
-            }
-          })
+                .then((response) => response.json())
+                .then((data) => {
+                  this.generalInteractions = data;
+                });
+            },
+            getGeneralPublic(startDate, endDate) {
+              let url = `${api}report/general-public?security_token=${security_token}&city=${city.value}`
+              if (startDate && endDate) {
+                url = `${api}report/general-public?security_token=${security_token}&city=${city.value}&start_date=${startDate}&end_date=${endDate}`
+              }
+              fetch(url, {
+                method: 'get'
+              })
+                .then((response) => response.json())
+                .then((data) => {
+                  this.generalPublic = data;
+                });
+            },
+            getTargetInteractions() {
+              fetch(`${api}report/interaction-target-audience?security_token=${security_token}&city=${city.value}`, {
+                method: 'get'
+              })
+                .then((response) => response.json())
+                .then((data) => {
+                  console.log(data)
+                  this.targetInteractions = data;
+                });
+            },
+            getTargetPublic(startDate, endDate) {
+              let url = `${api}report/target-audience?security_token=${security_token}&city=${city.value}`
+              if (startDate && endDate) {
+                url = `${api}report/target-audience?security_token=${security_token}&city=${city.value}&start_date=${startDate}&end_date=${endDate}`
+              }
+              fetch(url, {
+                method: 'get'
+              })
+                .then((response) => response.json())
+                .then((data) => {
+                  this.targetPublic = data;
+                });
+            },
+
+          }
         })
-        .catch(function(err) {
-          console.log('Error :(')
+
+        const picker = new Litepicker({
+          element: document.getElementById('datepicker'),
+          lang: 'pt-BR',
+          format: 'DD/MM/YYYY',
+          minDate: '2019-06-21',
+          maxDate: new Date(),
+          singleMode: false,
         });
 
-
+        const interestPicker = new Litepicker({
+          element: document.getElementById('datepicker-interest'),
+          lang: 'pt-BR',
+          format: 'DD/MM/YYYY',
+          minDate: '2019-06-21',
+          maxDate: new Date(),
+          singleMode: false,
+        });
       </script>
+
+      <!-- <script> -->
+        <!-- const picker = new Litepicker({ -->
+        <!--   element: document.getElementById('datepicker'), -->
+        <!--   lang: 'pt&#45;BR', -->
+        <!--   format: 'DD/MM/YYYY', -->
+        <!--   selectForward: true, -->
+        <!--   singleMode: false, -->
+        <!-- }); -->
+        <!--  -->
+      <!--   function showInfo(startDate, endDate) { -->
+      <!--     console.log(startDate, endDate); -->
+      <!--   } -->
+      <!--  -->
+      <!--   document.querySelector('#js&#45;filter&#45;reports').addEventListener('submit', (event) => { -->
+      <!--     event.preventDefault(); -->
+      <!--     const startDate = picker.getStartDate().getTime(); -->
+      <!--     const endDate = picker.getEndDate().getTime(); -->
+      <!--     showInfo(startDate, endDate); -->
+      <!--   }); -->
+      <!--  -->
+      <!--   function sortObjects(data, attr) { -->
+      <!--     var arr = []; -->
+      <!--     for (var prop in data) { -->
+      <!--       if (data.hasOwnProperty(prop)) { -->
+      <!--         var obj = {}; -->
+      <!--         obj[prop] = data[prop]; -->
+      <!--         obj.tempSortName = data[prop][attr]; -->
+      <!--         arr.push(obj); -->
+      <!--       } -->
+      <!--     } -->
+      <!--  -->
+      <!--     arr.sort(function(a, b) { -->
+      <!--       var at = a.tempSortName, -->
+      <!--         bt = b.tempSortName; -->
+      <!--       return at > bt ? 1 : ( at < bt ? &#45;1 : 0 ); -->
+      <!--     }); -->
+      <!--  -->
+      <!--     var result = []; -->
+      <!--     for (var i=0, l=arr.length; i<l; i++) { -->
+      <!--       var obj = arr[i]; -->
+      <!--       delete obj.tempSortName; -->
+      <!--       for (var prop in obj) { -->
+      <!--         if (obj.hasOwnProperty(prop)) { -->
+      <!--           var id = prop; -->
+      <!--         } -->
+      <!--       } -->
+      <!--       var item = obj[id]; -->
+      <!--       result.push(item); -->
+      <!--     } -->
+      <!--     return result; -->
+      <!--   } -->
+      <!--  -->
+      <!--   fetch(api + 'report&#45;new?security_token=' + security_token, { -->
+      <!--     method: 'get' -->
+      <!--   }) -->
+      <!--   .then((response) => response.json()) -->
+      <!--   .then((data) => { -->
+      <!--     $reportList = document.querySelector('.report'); -->
+      <!--  -->
+      <!--     data.cities.forEach((city) => { -->
+      <!--  -->
+      <!--       const $item = document.createElement('section'); -->
+      <!--       const $title = document.createElement('h1'); -->
+      <!--  -->
+      <!--       $item.className = 'report__item'; -->
+      <!--  -->
+      <!--       $title.textContent = Object.keys(city)[0]; -->
+      <!--  -->
+      <!--       $item.append($title); -->
+      <!--  -->
+      <!--       let sorted = {}; -->
+      <!--  -->
+      <!--       for (const key of Object.keys(city)) { -->
+      <!--         sorted = sortObjects(city[key], 'display_order') -->
+      <!--         sorted.forEach(item => { -->
+      <!--           console.log(item); -->
+      <!--  -->
+      <!--           const $itemIntern = document.createElement('div'); -->
+      <!--           const $subtitle = document.createElement('h2'); -->
+      <!--           const $text = document.createElement('p'); -->
+      <!--  -->
+      <!--           $itemIntern.className = 'report__item&#45;intern'; -->
+      <!--  -->
+      <!--           $subtitle.textContent = item.label; -->
+      <!--           $text.textContent = item.value; -->
+      <!--  -->
+      <!--           $itemIntern.append($subtitle); -->
+      <!--           $itemIntern.append($text); -->
+      <!--  -->
+      <!--           $item.append($itemIntern); -->
+      <!--  -->
+      <!--           $reportList.append($item); -->
+      <!--         }) -->
+      <!--       } -->
+      <!--     }) -->
+      <!--   }) -->
+      <!--   .catch(function(err) { -->
+      <!--     console.log('Error :(') -->
+      <!--   }); -->
+      <!--  -->
+      <!--  -->
+      <!-- </script> -->
 
       {{ partial "footer.html" . }}
 
