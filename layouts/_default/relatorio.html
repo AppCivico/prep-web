@@ -5,6 +5,10 @@
 
       <style>
           .report {
+            background: #fff;
+            padding: 0.5rem 2rem 2rem;
+            border-radius: 5px;
+            margin-top: 2rem;
           }
 
           .report__item {
@@ -26,11 +30,8 @@
             margin: 0.4em;
             text-align: center;
             border-radius: 5px;
-            background: #fff;
-          }
-
-          .report__item-intern:last-child {
-            margin-right: 0;
+            background: #ececec;
+            border: 1px solid lightgray;
           }
 
           .report__item h1 {
@@ -46,7 +47,6 @@
           h2,
           h3 {
             width: 100%;
-            color: #fff;
           }
 
           .report__item-intern h2,
@@ -263,6 +263,7 @@
           minDate: '2019-06-21',
           maxDate: new Date(),
           singleMode: false,
+          onSelect: function(date1, date2) { console.log(date1, date2); }
         });
 
         const interestPicker = new Litepicker({
