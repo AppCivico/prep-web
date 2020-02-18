@@ -219,7 +219,7 @@
             getGeneralPublic(startDate, endDate) {
               let url = `${api}report/general-public?security_token=${security_token}&city=${city.value}`
               if (startDate && endDate) {
-                url = `${api}report/general-public?security_token=${security_token}&city=${city.value}&start_date=${startDate}&end_date=${endDate}`
+                url = `${api}report/general-public?security_token=${security_token}&city=${city.value}&since=${startDate}&until=${endDate}`
               }
               fetch(url, {
                 method: 'get'
@@ -242,7 +242,7 @@
             getTargetPublic(startDate, endDate) {
               let url = `${api}report/target-audience?security_token=${security_token}&city=${city.value}`
               if (startDate && endDate) {
-                url = `${api}report/target-audience?security_token=${security_token}&city=${city.value}&start_date=${startDate}&end_date=${endDate}`
+                url = `${api}report/target-audience?security_token=${security_token}&city=${city.value}&since=${startDate}&until=${endDate}`
               }
               fetch(url, {
                 method: 'get'
