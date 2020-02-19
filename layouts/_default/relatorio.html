@@ -11,23 +11,38 @@
             margin-top: 2rem;
           }
 
+          input, button, select {
+            height: 33px;
+            background: white;
+            border: 1px solid lightgray;
+            border-radius: 3px;
+            padding: 7px 10px;
+            box-sizing: border-box;
+            line-height: 1;
+            font-size: 0.9em;
+          }
+
           .report__item {
-            display: flex;
-            flex-wrap: wrap;
-            flex-grow: 0;
-            flex-shrink: 0;
-            margin-left: -0.4rem;
-            margin-right: -0.4rem;
+            /* display: flex; */
+            /* flex-wrap: wrap; */
+            /* flex-grow: 0; */
+            /* flex-shrink: 0; */
+            /* margin-left: -0.4rem; */
+            /* margin-right: -0.4rem; */
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
+            grid-gap: 1rem;
           }
 
           .report__item-intern {
-            display: flex;
-            flex: 1 0 12%;
-            flex-direction: column;
-            width: 12%;
-            min-width: min-content;
+            /* display: flex; */
+            /* flex: 1 0 12%; */
+            /* flex-direction: column; */
+            /* width: 12%; */
+            /* min-width: min-content; */
             padding: 1rem;
-            margin: 0.4em;
+            margin: 0.4em 0;
             text-align: center;
             border-radius: 5px;
             background: #ececec;
@@ -46,18 +61,26 @@
           h1,
           h2,
           h3 {
+            grid-column: 1/-1;
             width: 100%;
+          }
+
+          ol {
+            list-style-position: inside;
+            padding-left: 0;
           }
 
           .report__item-intern h2,
           .report__item-intern h3 {
             color: #000;
+            font-size: 1.1em;
           }
 
           .report__item p {
-            font-size: 1.5em;
+            font-size: 2.1em;
             margin-top: auto;
             max-width: 100%;
+            font-weight: bold;
           }
       </style>
 
@@ -90,7 +113,6 @@
           <h2>Interações gerais</h2>
           <form @submit.prevent="filterGeneral">
             <input
-              v-model="generalDate"
               readonly
               required
               class="datepicker"
@@ -121,7 +143,6 @@
           <h2>Interações gerais</h2>
           <form @submit.prevent="filterInterest">
             <input
-              v-model="interestDate"
               readonly
               required
               class="datepicker"
@@ -157,6 +178,35 @@
             </template>
           </div>
         </article>
+
+        <article class="report">
+          <h1>Intents</h1>
+          <div class="report__item" v-if="intents">
+            <template v-for="(intent, index) in intents.metrics">
+              <template v-if="!Array.isArray(intent.value)">
+                <div class="report__item-intern">
+                  <h3>{{ "{{ intent.label }}" }}</h3>
+                  <p>{{ "{{ intent.value }}" }}</p>
+                </div>
+              </template>
+            </template>
+          </div>
+          <h2>Ranking</h2>
+          <div class="report__item" v-if="intents">
+            <template v-for="(intent, index) in intents.metrics">
+              <template v-if="Array.isArray(intent.value) && intent.value.length > 0">
+                <div class="report__item-intern">
+                  <h3>{{ "{{ intent.label }}" }}</h3>
+                  <ol>
+                    <li v-for="item in intent.value">
+                      {{ "{{ item }}" }}
+                    </li>
+                  </ol>
+                </div>
+              </template>
+            </template>
+          </div>
+        </article>
       </div>
 
       <!-- development version, includes helpful console warnings -->
@@ -179,6 +229,7 @@
             targetInteractions: null,
             generalPublic: null,
             targetPublic: null,
+            intents: null,
             generalDate: null,
             interestDate: null,
             city: 'todas',
@@ -189,6 +240,7 @@
             this.getGeneralPublic();
             this.getTargetInteractions();
             this.getTargetPublic();
+            this.getIntents();
           },
           methods: {
             updateCity() {
@@ -196,6 +248,7 @@
               this.getGeneralPublic();
               this.getTargetInteractions();
               this.getTargetPublic();
+              this.getIntents();
             },
             filterGeneral() {
               const startDate = picker.getStartDate().getTime();
@@ -252,7 +305,19 @@
                   this.targetPublic = data;
                 });
             },
-
+            getIntents(startDate, endDate) {
+              let url = `${api}report/intents?security_token=${security_token}&city=${city.value}`
+              if (startDate && endDate) {
+                url = `${api}report/intents?security_token=${security_token}&city=${city.value}&since=${startDate}&until=${endDate}`
+              }
+              fetch(url, {
+                method: 'get'
+              })
+                .then((response) => response.json())
+                .then((data) => {
+                  this.intents = data;
+                });
+            },
           }
         })
 
