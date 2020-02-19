@@ -253,13 +253,13 @@
               interestPicker.clearSelection();
             },
             filterGeneral() {
-              const startDate = picker.getStartDate().getTime();
-              const endDate = picker.getEndDate().getTime();
+              const startDate = picker.getStartDate().getTime()/1000;
+              const endDate = picker.getEndDate().getTime()/1000;
               this.getGeneralPublic(startDate, endDate);
             },
             filterInterest() {
-              const startDate = interestPicker.getStartDate().getTime();
-              const endDate = interestPicker.getEndDate().getTime();
+              const startDate = interestPicker.getStartDate().getTime()/1000;
+              const endDate = interestPicker.getEndDate().getTime()/1000;
               this.getTargetPublic(startDate, endDate);
             },
             getGeneralInteractions() {
