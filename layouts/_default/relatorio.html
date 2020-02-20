@@ -6,7 +6,7 @@
       <style>
           .report {
             background: #fff;
-            padding: 0.5rem 2rem 2rem;
+            padding: 0.5rem 2rem 3.4rem;
             border-radius: 5px;
             margin-top: 2rem;
           }
@@ -18,18 +18,10 @@
             border-radius: 3px;
             padding: 7px 10px;
             box-sizing: border-box;
-            line-height: 1;
             font-size: 0.9em;
           }
 
           .report__item {
-            /* display: flex; */
-            /* flex-wrap: wrap; */
-            /* flex-grow: 0; */
-            /* flex-shrink: 0; */
-            /* margin-left: -0.4rem; */
-            /* margin-right: -0.4rem; */
-
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
             grid-gap: 1rem;
@@ -37,12 +29,8 @@
 
           .report__item-intern {
             display: flex;
-            /* flex: 1 0 12%; */
             flex-direction: column;
-            /* width: 12%; */
-            /* min-width: min-content; */
             padding: 1rem;
-            margin: 0.4em 0;
             text-align: center;
             border-radius: 5px;
             background: #ececec;
@@ -70,6 +58,35 @@
             padding-left: 0;
           }
 
+          h1 {
+            color: #006a8a;
+            font-size: 2rem;
+            margin: 2rem 0 0;
+          }
+
+          h2 {
+            color: #009999;
+            font-weight: 400;
+          }
+
+          form {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+          }
+
+          button {
+            margin-left: 0.5rem;
+            background: #039a9a;
+            color: #fff;
+            border: 0;
+          }
+
+          .city-form button {
+            background: #fff;
+            color: #000;
+          }
+
           .report__item-intern h2,
           .report__item-intern h3 {
             color: #000;
@@ -88,7 +105,10 @@
         <article class="faq">
           <h1>{{ .Title }}</h1>
         </article>
-        <form @submit.prevent="updateCity">
+        <form
+          class="city-form"
+          @submit.prevent="updateCity"
+        >
           <select
             v-model="city"
             id="city"
@@ -119,6 +139,7 @@
               autocomplete="off"
               name="whatever"
               id="datepicker"
+              placeholder="Selecione uma data"
               ></input>
             <button type="submit">Filtrar</button>
           </form>
@@ -149,6 +170,7 @@
               autocomplete="off"
               name="whatever"
               id="datepicker-interest"
+              placeholder="Selecione uma data"
               ></input>
             <button type="submit">Filtrar</button>
           </form>
@@ -164,23 +186,25 @@
             </template>
           </div>
 
-          <div class="report__item" v-if="targetPublic">
-            <template v-for="(interaction, index) in targetPublic.metrics">
-              <template v-if="interaction.metrics">
-                <h2>{{ "{{ interaction.sub_group }}" }}</h2>
-                <template v-for="subinteraction in interaction.metrics">
-                  <div class="report__item-intern">
-                    <h3>{{ "{{ subinteraction.label }}" }}</h3>
-                    <p>{{ "{{ subinteraction.value }}" }}</p>
+          <template v-if="targetPublic && targetPublic.metrics">
+              <template v-for="(interaction, index) in targetPublic.metrics">
+                <template v-if="interaction.metrics">
+                  <h2>{{ "{{ interaction.sub_group }}" }}</h2>
+                  <div class="report__item">
+                    <div class="report__item-intern" v-for="subinteraction in interaction.metrics">
+                      <h3>{{ "{{ subinteraction.label }}" }}</h3>
+                      <p>{{ "{{ subinteraction.value }}" }}</p>
+                    </div>
                   </div>
                 </template>
               </template>
-            </template>
-          </div>
+          </template>
+
         </article>
 
         <article class="report">
           <h1>Intents</h1>
+          <h2>Geral</h2>
           <div class="report__item" v-if="intents">
             <template v-for="(intent, index) in intents.metrics">
               <template v-if="!Array.isArray(intent.value)">
