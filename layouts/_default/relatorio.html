@@ -37,6 +37,10 @@
             border: 1px solid lightgray;
           }
 
+          .report__item-intern--text-left {
+            text-align: left;
+          }
+
           .report__item h1 {
             width: 100%;
             margin-top: 1em;
@@ -219,7 +223,7 @@
           <div class="report__item" v-if="intents">
             <template v-for="(intent, index) in intents.metrics">
               <template v-if="Array.isArray(intent.value) && intent.value.length > 0">
-                <div class="report__item-intern">
+                <div class="report__item-intern report__item-intern--text-left">
                   <h3>{{ "{{ intent.label }}" }}</h3>
                   <ol>
                     <li v-for="item in intent.value">
