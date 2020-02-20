@@ -21,6 +21,10 @@
             font-size: 0.9em;
           }
 
+          button[type="reset"] {
+            background: #b00;
+          }
+
           .report__item {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
@@ -146,6 +150,7 @@
               placeholder="Selecione uma data"
               ></input>
             <button type="submit">Filtrar</button>
+            <button type="reset" @click="clearGeneralFilter">Limpar</button>
           </form>
           <div class="report__item" v-if="generalPublic">
             <div class="report__item-intern" v-for="(interaction, index) in generalPublic.metrics">
@@ -177,6 +182,7 @@
               placeholder="Selecione uma data"
               ></input>
             <button type="submit">Filtrar</button>
+            <button type="reset" @click="clearInterestFilter">Limpar</button>
           </form>
 
           <div class="report__item" v-if="targetPublic">
@@ -279,6 +285,14 @@
               this.getIntents();
               picker.clearSelection();
               interestPicker.clearSelection();
+            },
+            clearGeneralFilter() {
+              picker.clearSelection();
+              this.getGeneralPublic();
+            },
+            clearInterestFilter() {
+              interestPicker.clearSelection();
+              this.getTargetPublic();
             },
             filterGeneral() {
               const startDate = picker.getStartDate().getTime()/1000;
