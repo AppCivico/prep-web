@@ -295,14 +295,30 @@
               this.getTargetPublic();
             },
             filterGeneral() {
+              const currentDate = new Date().setHours(0,0,0,0)/1000;
               const startDate = picker.getStartDate().getTime()/1000;
               const endDate = picker.getEndDate().getTime()/1000;
-              this.getGeneralPublic(startDate, endDate);
+
+              if (endDate === currentDate) {
+                // endpoint has problems with timezone, so
+                // if endDate is today we don't send it
+                this.getGeneralPublic(startDate);
+              } else {
+                this.getGeneralPublic(startDate, endDate);
+              }
             },
             filterInterest() {
+              const currentDate = new Date().setHours(0,0,0,0)/1000;
               const startDate = interestPicker.getStartDate().getTime()/1000;
               const endDate = interestPicker.getEndDate().getTime()/1000;
-              this.getTargetPublic(startDate, endDate);
+
+              if (endDate === currentDate) {
+                // endpoint has problems with timezone, so
+                // if endDate is today we don't send it
+                this.getTargetPublic(startDate);
+              } else {
+                this.getTargetPublic(startDate, endDate);
+              }
             },
             getGeneralInteractions() {
               fetch(`${api}report/interaction?security_token=${security_token}&city=${city.value}`, {
@@ -318,6 +334,9 @@
               if (startDate && endDate) {
                 url = `${api}report/general-public?security_token=${security_token}&city=${city.value}&since=${startDate}&until=${endDate}`
               }
+              if (startDate && !endDate) {
+                url = `${api}report/general-public?security_token=${security_token}&city=${city.value}&since=${startDate}`
+              }
               fetch(url, {
                 method: 'get'
               })
@@ -332,7 +351,6 @@
               })
                 .then((response) => response.json())
                 .then((data) => {
-                  console.log(data)
                   this.targetInteractions = data;
                 });
             },
@@ -340,6 +358,9 @@
               let url = `${api}report/target-audience?security_token=${security_token}&city=${city.value}`
               if (startDate && endDate) {
                 url = `${api}report/target-audience?security_token=${security_token}&city=${city.value}&since=${startDate}&until=${endDate}`
+              }
+              if (startDate && !endDate) {
+                url = `${api}report/target-audience?security_token=${security_token}&city=${city.value}&since=${startDate}`
               }
               fetch(url, {
                 method: 'get'
@@ -372,7 +393,6 @@
           minDate: '2019-06-21',
           maxDate: new Date(),
           singleMode: false,
-          onSelect: function(date1, date2) { console.log(date1, date2); }
         });
 
         const interestPicker = new Litepicker({
